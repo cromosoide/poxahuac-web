@@ -5,9 +5,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { CharacterReveal } from "@/components/animations/CharacterReveal";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-import { FloatingElements } from "@/components/animations/FloatingElements";
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -18,7 +16,6 @@ export function Hero() {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <section
@@ -31,8 +28,7 @@ export function Hero() {
         style={{
           y: backgroundY,
           scale: backgroundScale,
-          backgroundImage:
-            "url('/images/hero-pozole.jpg')",
+          backgroundImage: "url('/images/hero-pozole.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -41,34 +37,18 @@ export function Hero() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-pox-brown via-pox-brown/70 to-pox-brown/40" />
 
-      {/* Floating elements */}
-      <FloatingElements />
-
-      {/* Content */}
-      <motion.div
-        className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white"
-        style={{ opacity: contentOpacity }}
-      >
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] tracking-tight mb-6">
-          <CharacterReveal text="El pozole más esponjoso de Amecameca" delay={0.3} />
+      {/* Content — visible by default, CSS animations for enhancement */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
+        <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] tracking-tight mb-6">
+          El pozole más esponjoso de Amecameca
         </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.6 }}
-          className="text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto"
-        >
+        <p className="hero-subtitle text-lg sm:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
           Tradición náhuatl en cada cucharada. Pozole rojo, blanco y los mejores
           antojitos mexicanos con vista a los volcanes.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
+        <div className="hero-ctas flex flex-col sm:flex-row gap-4 justify-center">
           <MagneticButton>
             <Link href="/menu">
               <Button
@@ -87,23 +67,18 @@ export function Hero() {
               </Button>
             </Link>
           </MagneticButton>
-        </motion.div>
+        </div>
 
         {/* TripAdvisor badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.3 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2.2, duration: 0.6, type: "spring" }}
-          className="mt-8 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2"
-        >
+        <div className="hero-badge mt-8 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
           <div className="flex text-yellow-400">
             {[...Array(5)].map((_, i) => (
               <Star key={i} size={16} fill="currentColor" />
             ))}
           </div>
           <span className="text-sm font-semibold">5.0 en TripAdvisor</span>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

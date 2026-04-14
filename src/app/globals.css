@@ -131,7 +131,7 @@ body {
   border-radius: 4px;
 }
 
-/* CSS-only menu item entrance — no JS dependency */
+/* CSS-only entrance animations — no JS dependency */
 @keyframes menu-item-enter {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -139,6 +139,28 @@ body {
 
 .menu-item-enter {
   animation: menu-item-enter 0.4s ease-out both;
+}
+
+/* Hero CSS animations — content visible even without Framer Motion */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+  animation: hero-fade-up 0.8s ease-out 0.2s both;
+}
+
+.hero-subtitle {
+  animation: hero-fade-up 0.6s ease-out 1s both;
+}
+
+.hero-ctas {
+  animation: hero-fade-up 0.6s ease-out 1.3s both;
+}
+
+.hero-badge {
+  animation: hero-fade-up 0.6s ease-out 1.6s both;
 }
 
 /* Reduced motion */

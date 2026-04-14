@@ -13,7 +13,7 @@ interface MenuNavProps {
 export function MenuNav({ activeCategory, onCategoryChange }: MenuNavProps) {
   return (
     <nav
-      className="sticky top-[72px] z-30 bg-pox-brown/95 backdrop-blur-sm border-b border-pox-gold/20 py-3"
+      className="sticky top-[60px] z-30 bg-pox-brown/95 backdrop-blur-sm border-b border-pox-gold/20 py-3"
       aria-label="Categorías del menú"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

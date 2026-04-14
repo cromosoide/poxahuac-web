@@ -14,7 +14,7 @@ export default function MenuPage() {
   return (
     <>
       {/* Hero */}
-      <div className="bg-pox-dark-bg pt-8 pb-12 text-center text-white">
+      <div className="bg-pox-dark-bg pt-6 pb-6 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-3 tracking-tight">
             Menú de Poxahuac

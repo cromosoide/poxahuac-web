@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
+
+const StaggerContext = createContext(false);
 
 interface StaggerChildrenProps {
   children: ReactNode;
@@ -24,23 +26,29 @@ export function StaggerChildren({
   }, []);
 
   if (shouldReduceMotion || forceVisible) {
-    return <div className={className}>{children}</div>;
+    return (
+      <StaggerContext.Provider value={true}>
+        <div className={className}>{children}</div>
+      </StaggerContext.Provider>
+    );
   }
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: staggerDelay } },
-      }}
-      className={className}
-      onAnimationComplete={() => setForceVisible(true)}
-    >
-      {children}
-    </motion.div>
+    <StaggerContext.Provider value={false}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: staggerDelay } },
+        }}
+        className={className}
+        onAnimationComplete={() => setForceVisible(true)}
+      >
+        {children}
+      </motion.div>
+    </StaggerContext.Provider>
   );
 }
 
@@ -51,6 +59,13 @@ export function StaggerItem({
   children: ReactNode;
   className?: string;
 }) {
+  const parentForcedVisible = useContext(StaggerContext);
+
+  // If parent fell back to plain div, render as plain div too
+  if (parentForcedVisible) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       variants={{

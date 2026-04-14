@@ -78,7 +78,7 @@ export default function RootLayout({
         </a>
         <ScrollProgress />
         <Header />
-        <main id="main-content" className="flex-1 pt-[72px]">
+        <main id="main-content" className="flex-1 pt-[76px] sm:pt-[80px]">
           {children}
         </main>
         <Footer />
