@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -15,8 +16,14 @@ export function StaggerChildren({
   className,
 }: StaggerChildrenProps) {
   const shouldReduceMotion = useReducedMotion();
+  const [forceVisible, setForceVisible] = useState(false);
 
-  if (shouldReduceMotion) {
+  useEffect(() => {
+    const timer = setTimeout(() => setForceVisible(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (shouldReduceMotion || forceVisible) {
     return <div className={className}>{children}</div>;
   }
 
@@ -30,6 +37,7 @@ export function StaggerChildren({
         visible: { transition: { staggerChildren: staggerDelay } },
       }}
       className={className}
+      onAnimationComplete={() => setForceVisible(true)}
     >
       {children}
     </motion.div>
