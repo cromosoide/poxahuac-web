@@ -29,7 +29,7 @@ export function MenuNav({ activeCategory, onCategoryChange }: MenuNavProps) {
                 "shrink-0 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200",
                 activeCategory === cat.id
                   ? "bg-pox-red text-white"
-                  : "bg-pox-dark-surface text-pox-cream hover:bg-pox-gold/10"
+                  : "bg-pox-dark-surface text-white hover:bg-pox-gold/10"
               )}
             >
               {cat.icon} {cat.label}

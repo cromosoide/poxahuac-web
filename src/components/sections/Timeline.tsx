@@ -47,10 +47,10 @@ export function Timeline() {
                 <span className="inline-block px-3 py-1 bg-pox-red text-white text-xs font-bold rounded-full mb-2">
                   {item.year}
                 </span>
-                <h3 className="text-xl font-heading font-bold text-pox-cream mb-2">
+                <h3 className="text-xl font-heading font-bold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-pox-cream/70 leading-relaxed">
+                <p className="text-white/70 leading-relaxed">
                   {item.description}
                 </p>
               </div>

@@ -67,10 +67,10 @@ export function ReservationForm() {
     return (
       <div className="text-center py-12">
         <CheckCircle2 className="mx-auto text-green-500 mb-4" size={64} />
-        <h3 className="text-2xl font-heading font-bold text-pox-cream mb-2">
+        <h3 className="text-2xl font-heading font-bold text-white mb-2">
           ¡Reservación enviada!
         </h3>
-        <p className="text-pox-cream/70">
+        <p className="text-white/70">
           Te contactaremos por WhatsApp en menos de 30 minutos para confirmar tu mesa.
         </p>
       </div>
@@ -113,14 +113,14 @@ export function ReservationForm() {
 
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label htmlFor="fecha" className="block text-sm font-semibold text-pox-cream mb-1.5">
+          <label htmlFor="fecha" className="block text-sm font-semibold text-white mb-1.5">
             Fecha <span className="text-pox-red">*</span>
           </label>
           <input
             id="fecha"
             type="date"
             min={minDate}
-            className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+            className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
             {...register("fecha")}
           />
           {errors.fecha && (
@@ -129,12 +129,12 @@ export function ReservationForm() {
         </div>
 
         <div>
-          <label htmlFor="hora" className="block text-sm font-semibold text-pox-cream mb-1.5">
+          <label htmlFor="hora" className="block text-sm font-semibold text-white mb-1.5">
             Hora <span className="text-pox-red">*</span>
           </label>
           <select
             id="hora"
-            className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+            className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
             {...register("hora")}
           >
             <option value="">Seleccionar</option>
@@ -152,7 +152,7 @@ export function ReservationForm() {
 
       {/* Personas counter */}
       <div>
-        <label className="block text-sm font-semibold text-pox-cream mb-1.5">
+        <label className="block text-sm font-semibold text-white mb-1.5">
           Número de personas <span className="text-pox-red">*</span>
         </label>
         <div className="flex items-center gap-4">
@@ -163,11 +163,11 @@ export function ReservationForm() {
               setPersonas(v);
               setValue("personas", v);
             }}
-            className="w-10 h-10 rounded-full bg-pox-dark-surface border border-pox-gold/30 flex items-center justify-center text-pox-cream hover:bg-pox-gold/20 transition-colors"
+            className="w-10 h-10 rounded-full bg-pox-dark-surface border border-pox-gold/30 flex items-center justify-center text-white hover:bg-pox-gold/20 transition-colors"
           >
             <Minus size={18} />
           </button>
-          <span className="text-2xl font-heading font-bold text-pox-cream w-8 text-center">
+          <span className="text-2xl font-heading font-bold text-white w-8 text-center">
             {personas}
           </span>
           <button
@@ -177,7 +177,7 @@ export function ReservationForm() {
               setPersonas(v);
               setValue("personas", v);
             }}
-            className="w-10 h-10 rounded-full bg-pox-dark-surface border border-pox-gold/30 flex items-center justify-center text-pox-cream hover:bg-pox-gold/20 transition-colors"
+            className="w-10 h-10 rounded-full bg-pox-dark-surface border border-pox-gold/30 flex items-center justify-center text-white hover:bg-pox-gold/20 transition-colors"
           >
             <Plus size={18} />
           </button>
@@ -185,12 +185,12 @@ export function ReservationForm() {
       </div>
 
       <div>
-        <label htmlFor="ocasion" className="block text-sm font-semibold text-pox-cream mb-1.5">
+        <label htmlFor="ocasion" className="block text-sm font-semibold text-white mb-1.5">
           Ocasión especial (opcional)
         </label>
         <select
           id="ocasion"
-          className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+          className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
           {...register("ocasion")}
         >
           <option value="">Sin ocasión especial</option>
@@ -203,14 +203,14 @@ export function ReservationForm() {
       </div>
 
       <div>
-        <label htmlFor="notas" className="block text-sm font-semibold text-pox-cream mb-1.5">
+        <label htmlFor="notas" className="block text-sm font-semibold text-white mb-1.5">
           Notas adicionales (opcional)
         </label>
         <textarea
           id="notas"
           rows={3}
           placeholder="Alergias, preferencias, peticiones especiales..."
-          className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream resize-none"
+          className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white resize-none"
           {...register("notas")}
         />
       </div>

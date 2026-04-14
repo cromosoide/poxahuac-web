@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { BRAND, NAV_LINKS } from "@/lib/constants";
 
@@ -15,13 +16,19 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-pox-black text-pox-cream">
+    <footer className="bg-pox-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Col 1: Brand */}
           <div>
-            <Link href="/" className="inline-block font-display font-bold text-3xl tracking-tight mb-4">
-              <span className="text-pox-gold">🌽</span> P<span className="text-pox-gold">o</span>xahuac
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/images/logo/poxahuac_logo_blanco.png"
+                alt="Poxahuac"
+                width={180}
+                height={45}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-4">
               {BRAND.tagline}. Restaurante de pozole tradicional mexicano en Amecameca, Estado de México.

@@ -8,7 +8,7 @@ export const menuItems: MenuItem[] = [
     description: "Nuestro clásico pozole rojo con pechuga de pollo desmenuzada, maíz pozolero y chile guajillo. Servido con lechuga, rábano, tostadas y oregano.",
     price: 120,
     category: "pozoles",
-    image: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=600&q=80",
+    image: "/images/pozole-rojo.jpg",
     badges: ["mas-vendido"],
     featured: true,
   },
@@ -18,7 +18,7 @@ export const menuItems: MenuItem[] = [
     description: "Pozole rojo tradicional con carne de cerdo tierna, cocido lentamente con chile guajillo y ancho. Acompañado con todos los complementos.",
     price: 130,
     category: "pozoles",
-    image: "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=600&q=80",
+    image: "/images/pozole-topdown.jpg",
     featured: true,
   },
   {
@@ -27,7 +27,7 @@ export const menuItems: MenuItem[] = [
     description: "Caldo claro y reconfortante con pollo y maíz pozolero. Perfecto para quienes prefieren un sabor más suave y delicado.",
     price: 120,
     category: "pozoles",
-    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80",
+    image: "/images/pozole-casual.jpg",
   },
   {
     id: "pozole-blanco-cerdo",
@@ -53,7 +53,7 @@ export const menuItems: MenuItem[] = [
     description: "Lo mejor de ambos mundos: pozole rojo con pollo y cerdo. Para los que no pueden decidirse.",
     price: 145,
     category: "pozoles",
-    image: "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=600&q=80",
+    image: "/images/pozole-topdown-2.jpg",
     badges: ["nuevo"],
   },
 

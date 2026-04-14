@@ -210,7 +210,7 @@ export default function HorariosPage() {
                 "shrink-0 px-5 py-3 rounded-xl font-heading font-semibold transition-all",
                 selectedDay === i
                   ? "bg-pox-red text-white shadow-lg"
-                  : "bg-pox-dark-surface text-pox-cream hover:bg-pox-gold/10"
+                  : "bg-pox-dark-surface text-white hover:bg-pox-gold/10"
               )}
             >
               <span className="hidden sm:inline">{d.name}</span>
@@ -222,7 +222,7 @@ export default function HorariosPage() {
         {/* Chart */}
         <FadeIn>
           <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 sm:p-8 mb-8">
-            <h2 className="font-heading font-bold text-pox-cream text-xl mb-6">
+            <h2 className="font-heading font-bold text-white text-xl mb-6">
               {day.name} — Nivel de afluencia
             </h2>
 
@@ -231,7 +231,7 @@ export default function HorariosPage() {
                 const isCurrent = isToday && currentLevel?.time === hour.time;
                 return (
                   <div key={hour.time} className={cn("flex items-center gap-3", isCurrent && "bg-pox-gold/10 -mx-2 px-2 py-1 rounded-lg")}>
-                    <span className="text-sm text-pox-cream/70 w-14 shrink-0 font-mono">
+                    <span className="text-sm text-white/70 w-14 shrink-0 font-mono">
                       {hour.time}
                     </span>
                     <div className="flex-1 bg-pox-brown rounded-full h-8 overflow-hidden">
@@ -256,7 +256,7 @@ export default function HorariosPage() {
             </div>
 
             {/* Legend */}
-            <div className="flex gap-4 mt-6 text-xs text-pox-cream/70">
+            <div className="flex gap-4 mt-6 text-xs text-white/70">
               <span className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded-full bg-green-400" /> Tranquilo
               </span>
@@ -303,10 +303,10 @@ export default function HorariosPage() {
 
         {/* SEO Content Block */}
         <div className="bg-pox-dark-surface rounded-2xl p-6 sm:p-8 border border-pox-gold/20">
-          <h2 className="font-heading font-bold text-pox-cream text-lg mb-3">
+          <h2 className="font-heading font-bold text-white text-lg mb-3">
             Horarios de Poxahuac en Amecameca
           </h2>
-          <div className="text-pox-cream/70 text-sm leading-relaxed space-y-3">
+          <div className="text-white/70 text-sm leading-relaxed space-y-3">
             <p>
               <strong>Poxahuac</strong> abre de martes a domingo en {BRAND.address.city}, {BRAND.address.state}.
               Nuestro horario es: martes a jueves de 10:30 a 20:30, viernes y sabado de 10:30 a 21:00,

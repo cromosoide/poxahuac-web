@@ -19,9 +19,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {
             "bg-pox-red text-white hover:bg-pox-red/90 shadow-lg hover:shadow-xl":
               variant === "filled",
-            "border-2 border-pox-gold text-pox-gold hover:bg-pox-gold hover:text-pox-black":
+            "bg-pox-cream text-pox-brown border-2 border-pox-cream hover:bg-white":
               variant === "outline",
-            "text-pox-cream hover:bg-white/10":
+            "text-white hover:bg-white/10":
               variant === "ghost",
           },
           {

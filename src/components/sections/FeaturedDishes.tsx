@@ -25,15 +25,15 @@ export function FeaturedDishes() {
   }, []);
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-16 lg:py-24 bg-pox-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <p className="section-label text-center mb-3">Nuestro Menú</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-pox-cream text-center mb-2 tracking-tight">
+          <p className="section-label text-center mb-3 text-pox-red">Nuestro Menú</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-pox-brown text-center mb-2 tracking-tight">
             Nuestros Platillos Estrella
           </h2>
           <div className="section-divider" />
-          <p className="text-pox-cream/70 text-center mb-12 max-w-2xl mx-auto mt-4">
+          <p className="text-pox-brown/70 text-center mb-12 max-w-2xl mx-auto mt-4">
             Los favoritos de nuestros comensales, preparados con ingredientes
             frescos de la región.
           </p>
@@ -58,7 +58,7 @@ export function FeaturedDishes() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
               >
-                <div className="bg-pox-dark-surface rounded-2xl shadow-md overflow-hidden border border-pox-gold/20 hover:-translate-y-1 hover:shadow-xl transition-all duration-200">
+                <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-pox-brown/10 hover:-translate-y-1 hover:shadow-xl transition-all duration-200">
                   <ImageReveal direction="up" delay={i * 0.1}>
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <Image
@@ -81,13 +81,13 @@ export function FeaturedDishes() {
                     </div>
                   </ImageReveal>
                   <div className="p-5">
-                    <h3 className="font-heading font-bold text-pox-cream text-lg">
+                    <h3 className="font-heading font-bold text-pox-brown text-lg">
                       {dish.name}
                     </h3>
-                    <p className="text-pox-cream/70 text-sm mt-1 line-clamp-2">
+                    <p className="text-pox-brown/70 text-sm mt-1 line-clamp-2">
                       {dish.description}
                     </p>
-                    <p className="text-pox-gold font-bold text-xl mt-3">
+                    <p className="text-pox-red font-bold text-xl mt-3">
                       {formatPrice(dish.price)}
                     </p>
                   </div>

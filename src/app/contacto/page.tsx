@@ -30,7 +30,7 @@ export default function ContactoPage() {
           {/* Form */}
           <div className="lg:col-span-3">
             <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 sm:p-8">
-              <h2 className="text-2xl font-heading font-bold text-pox-cream mb-6">
+              <h2 className="text-2xl font-heading font-bold text-white mb-6">
                 Envíanos un mensaje
               </h2>
               <ContactForm />
@@ -48,11 +48,11 @@ export default function ContactoPage() {
                 <li>
                   <a
                     href={`tel:${BRAND.phone}`}
-                    className="flex items-center gap-3 text-pox-cream/70 hover:text-pox-gold transition-colors"
+                    className="flex items-center gap-3 text-white/70 hover:text-pox-gold transition-colors"
                   >
                     <Phone size={18} className="text-pox-gold" />
                     <div>
-                      <p className="text-xs text-pox-cream/50">Teléfono</p>
+                      <p className="text-xs text-white/50">Teléfono</p>
                       <p className="font-semibold">{BRAND.phoneDisplay}</p>
                     </div>
                   </a>
@@ -62,11 +62,11 @@ export default function ContactoPage() {
                     href={`https://wa.me/${BRAND.whatsappFull}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-pox-cream/70 hover:text-pox-gold transition-colors"
+                    className="flex items-center gap-3 text-white/70 hover:text-pox-gold transition-colors"
                   >
                     <MessageCircle size={18} className="text-pox-gold" />
                     <div>
-                      <p className="text-xs text-pox-cream/50">WhatsApp</p>
+                      <p className="text-xs text-white/50">WhatsApp</p>
                       <p className="font-semibold">{BRAND.whatsapp}</p>
                     </div>
                   </a>
@@ -74,19 +74,19 @@ export default function ContactoPage() {
                 <li>
                   <a
                     href={`mailto:${BRAND.email}`}
-                    className="flex items-center gap-3 text-pox-cream/70 hover:text-pox-gold transition-colors"
+                    className="flex items-center gap-3 text-white/70 hover:text-pox-gold transition-colors"
                   >
                     <Mail size={18} className="text-pox-gold" />
                     <div>
-                      <p className="text-xs text-pox-cream/50">Email</p>
+                      <p className="text-xs text-white/50">Email</p>
                       <p className="font-semibold">{BRAND.email}</p>
                     </div>
                   </a>
                 </li>
-                <li className="flex items-center gap-3 text-pox-cream/70">
+                <li className="flex items-center gap-3 text-white/70">
                   <MapPin size={18} className="text-pox-gold shrink-0" />
                   <div>
-                    <p className="text-xs text-pox-cream/50">Dirección</p>
+                    <p className="text-xs text-white/50">Dirección</p>
                     <p className="font-semibold text-sm">{BRAND.address.full}</p>
                   </div>
                 </li>
@@ -109,7 +109,7 @@ export default function ContactoPage() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-white/10 transition-colors text-pox-cream/70 hover:text-pox-gold"
+                    className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-white/10 transition-colors text-white/70 hover:text-pox-gold"
                   >
                     <span className="font-semibold text-sm">{social.label}</span>
                     <ArrowUpRight size={16} />
@@ -127,7 +127,7 @@ export default function ContactoPage() {
                 {BRAND.payments.map((method) => (
                   <span
                     key={method}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pox-brown rounded-lg text-sm text-pox-cream/70"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pox-brown rounded-lg text-sm text-white/70"
                   >
                     {method === "Efectivo" ? (
                       <Banknote size={16} className="text-pox-gold" />

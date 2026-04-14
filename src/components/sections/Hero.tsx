@@ -32,7 +32,7 @@ export function Hero() {
           y: backgroundY,
           scale: backgroundScale,
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=1600&q=80')",
+            "url('/images/hero-pozole.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -74,7 +74,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-pox-gold text-pox-gold hover:bg-pox-gold hover:text-pox-black w-full sm:w-auto"
+                className="bg-pox-cream text-pox-brown border-pox-cream hover:bg-white w-full sm:w-auto"
               >
                 Ver Menú
               </Button>

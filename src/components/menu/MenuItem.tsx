@@ -38,10 +38,10 @@ export function MenuItem({ item, index }: MenuItemProps) {
             </div>
           </ImageReveal>
           <div className="p-5">
-            <h3 className="font-heading font-bold text-pox-cream text-lg">
+            <h3 className="font-heading font-bold text-white text-lg">
               {item.name}
             </h3>
-            <p className="text-pox-cream/70 text-sm mt-1 line-clamp-2">
+            <p className="text-white/70 text-sm mt-1 line-clamp-2">
               {item.description}
             </p>
             <p className="text-pox-gold font-bold text-xl mt-3 font-heading">

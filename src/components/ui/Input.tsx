@@ -12,7 +12,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <div className="relative">
         <label
           htmlFor={id}
-          className="block text-sm font-semibold text-pox-cream mb-1.5"
+          className="block text-sm font-semibold text-white mb-1.5"
         >
           {label}
           {props.required && <span className="text-pox-red ml-0.5">*</span>}
@@ -21,9 +21,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           id={id}
           className={cn(
-            "w-full px-4 py-3 rounded-lg border-2 bg-pox-dark-surface text-pox-cream",
+            "w-full px-4 py-3 rounded-lg border-2 bg-pox-dark-surface text-white",
             "transition-colors duration-200",
-            "placeholder:text-pox-cream/40",
+            "placeholder:text-white/40",
             "focus:outline-none focus:border-pox-gold",
             error
               ? "border-pox-red animate-[shake_0.3s_ease-in-out]"

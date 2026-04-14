@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
@@ -37,11 +38,16 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-white font-display font-bold text-2xl sm:text-3xl tracking-tight"
             aria-label="Poxahuac - Ir al inicio"
           >
-            <span className="text-pox-gold">🌽</span>
-            <span>P<span className="text-pox-gold">o</span>xahuac</span>
+            <Image
+              src="/images/logo/poxahuac_logo_blanco.png"
+              alt="Poxahuac"
+              width={160}
+              height={40}
+              className="h-8 sm:h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

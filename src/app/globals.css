@@ -4,12 +4,12 @@
   --color-pox-red: #DB1622;
   --color-pox-red-dark: #63121F;
   --color-pox-cream: #F7DECA;
-  --color-pox-brown: #331F14;
+  --color-pox-brown: #63121F;
   --color-pox-gold: #C59B6D;
   --color-pox-gray: #4A4A4A;
-  --color-pox-black: #1A1A1A;
-  --color-pox-dark-bg: #1A110D;
-  --color-pox-dark-surface: #2A1D15;
+  --color-pox-black: #3A0B14;
+  --color-pox-dark-bg: #4E1019;
+  --color-pox-dark-surface: #7A1F2E;
 
   --font-heading: "DM Sans", Bahnschrift, system-ui, sans-serif;
   --font-body: "Nunito Sans", system-ui, sans-serif;
@@ -44,8 +44,8 @@
 }
 
 :root {
-  --background: #331F14;
-  --foreground: #F7DECA;
+  --background: #63121F;
+  --foreground: #FFFFFF;
 }
 
 * {

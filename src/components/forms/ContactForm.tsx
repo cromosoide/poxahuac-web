@@ -55,10 +55,10 @@ export function ContactForm() {
     return (
       <div className="text-center py-12">
         <CheckCircle2 className="mx-auto text-green-500 mb-4" size={64} />
-        <h3 className="text-2xl font-heading font-bold text-pox-cream mb-2">
+        <h3 className="text-2xl font-heading font-bold text-white mb-2">
           ¡Mensaje enviado!
         </h3>
-        <p className="text-pox-cream/70">
+        <p className="text-white/70">
           Te responderemos lo antes posible. Gracias por contactarnos.
         </p>
       </div>
@@ -87,12 +87,12 @@ export function ContactForm() {
       />
 
       <div>
-        <label htmlFor="contact-asunto" className="block text-sm font-semibold text-pox-cream mb-1.5">
+        <label htmlFor="contact-asunto" className="block text-sm font-semibold text-white mb-1.5">
           Asunto <span className="text-pox-red">*</span>
         </label>
         <select
           id="contact-asunto"
-          className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+          className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
           {...register("asunto")}
         >
           <option value="">Seleccionar</option>
@@ -108,14 +108,14 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="contact-mensaje" className="block text-sm font-semibold text-pox-cream mb-1.5">
+        <label htmlFor="contact-mensaje" className="block text-sm font-semibold text-white mb-1.5">
           Mensaje <span className="text-pox-red">*</span>
         </label>
         <textarea
           id="contact-mensaje"
           rows={5}
           placeholder="¿En qué podemos ayudarte?"
-          className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors resize-none bg-pox-dark-surface text-pox-cream placeholder:text-pox-cream/40"
+          className="w-full px-4 py-3 rounded-lg border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors resize-none bg-pox-dark-surface text-white placeholder:text-white/40"
           {...register("mensaje")}
         />
         {errors.mensaje && (

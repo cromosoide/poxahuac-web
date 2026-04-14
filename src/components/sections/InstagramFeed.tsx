@@ -8,12 +8,12 @@ import { ImageReveal } from "@/components/animations/ImageReveal";
 import { StaggerChildren, StaggerItem } from "@/components/animations/StaggerChildren";
 
 const instagramPhotos = [
-  { src: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=400&q=80", alt: "Pozole rojo servido con guarniciones" },
-  { src: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80", alt: "Ambiente del restaurante Poxahuac" },
-  { src: "https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=400&q=80", alt: "Quesadillas hechas a mano" },
-  { src: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&q=80", alt: "Antojitos mexicanos variados" },
-  { src: "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=400&q=80", alt: "Pozole mixto con todos los complementos" },
-  { src: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&q=80", alt: "Guacamole fresco preparado al momento" },
+  { src: "/images/hero-pozole.jpg", alt: "Pozole rojo servido con guarniciones" },
+  { src: "/images/interior-restaurante.jpg", alt: "Ambiente del restaurante Poxahuac" },
+  { src: "/images/pozole-rojo.jpg", alt: "Pozole rojo con guarniciones" },
+  { src: "/images/mesa-completa.jpg", alt: "Mesa completa de pozoles y antojitos" },
+  { src: "/images/pozole-topdown.jpg", alt: "Pozole visto desde arriba" },
+  { src: "/images/pozole-casual.jpg", alt: "Pozole servido con tostadas" },
 ];
 
 export function InstagramFeed() {
@@ -22,10 +22,10 @@ export function InstagramFeed() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-pox-cream mb-3">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-3">
               Síguenos en Instagram
             </h2>
-            <p className="text-pox-cream/70">@poxahuac · +5,600 seguidores</p>
+            <p className="text-white/70">@poxahuac · +5,600 seguidores</p>
           </div>
         </FadeIn>
 
@@ -60,7 +60,7 @@ export function InstagramFeed() {
             href={BRAND.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-pox-gold font-heading font-semibold hover:text-pox-cream transition-colors"
+            className="inline-flex items-center gap-2 text-pox-gold font-heading font-semibold hover:text-white transition-colors"
           >
             <Camera size={20} />
             Síguenos en Instagram →

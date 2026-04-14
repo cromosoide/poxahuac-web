@@ -50,7 +50,7 @@ export default function NosotrosPage() {
         className="relative bg-pox-dark-bg py-20 text-center text-white bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(26,17,13,0.85), rgba(26,17,13,0.95)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80')",
+            "linear-gradient(to bottom, rgba(99,18,31,0.85), rgba(99,18,31,0.95)), url('/images/interior-restaurante.jpg')",
         }}
       >
         <div className="max-w-4xl mx-auto px-4">
@@ -67,7 +67,7 @@ export default function NosotrosPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-heading font-bold text-pox-cream text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-white text-center mb-12">
               Nuestro Camino
             </h2>
           </FadeIn>
@@ -79,7 +79,7 @@ export default function NosotrosPage() {
       <section className="py-16 lg:py-24 bg-pox-dark-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-heading font-bold text-pox-cream text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-white text-center mb-12">
               Nuestra Filosofía
             </h2>
           </FadeIn>
@@ -90,10 +90,10 @@ export default function NosotrosPage() {
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-pox-gold/10 text-pox-gold mb-5">
                     <item.icon size={32} />
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-pox-cream mb-3">
+                  <h3 className="text-xl font-heading font-bold text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-pox-cream/70 leading-relaxed">{item.description}</p>
+                  <p className="text-white/70 leading-relaxed">{item.description}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -105,12 +105,12 @@ export default function NosotrosPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-heading font-bold text-pox-cream text-center mb-8">
+            <h2 className="text-3xl font-heading font-bold text-white text-center mb-8">
               El Pozole: Un Platillo con Historia
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="prose prose-lg mx-auto text-pox-cream/70">
+            <div className="prose prose-lg mx-auto text-white/70">
               <p>
                 El pozole es uno de los platillos más antiguos de México, con orígenes que se remontan a la época prehispánica. Su nombre viene del náhuatl <em>pozolli</em>, que significa &ldquo;espumoso&rdquo; o &ldquo;hervido&rdquo;, describiendo la forma en que el maíz cacahuazintle revienta al cocerse.
               </p>
@@ -164,10 +164,10 @@ export default function NosotrosPage() {
       {/* CTA */}
       <section className="py-16 text-center bg-pox-dark-surface">
         <FadeIn>
-          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-pox-cream mb-4">
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-4">
             Ven a conocernos
           </h2>
-          <p className="text-pox-cream/70 mb-6">
+          <p className="text-white/70 mb-6">
             Reserva tu mesa y vive la experiencia Poxahuac
           </p>
           <Link href="/reservaciones">

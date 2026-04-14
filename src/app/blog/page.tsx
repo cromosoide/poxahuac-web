@@ -43,7 +43,7 @@ export default function BlogPage() {
                     />
                   </div>
                   <div className="p-5">
-                    <div className="flex items-center gap-2 text-pox-cream/50 text-xs mb-2">
+                    <div className="flex items-center gap-2 text-white/50 text-xs mb-2">
                       <Calendar size={14} />
                       {new Date(post.date).toLocaleDateString("es-MX", {
                         year: "numeric",
@@ -51,10 +51,10 @@ export default function BlogPage() {
                         day: "numeric",
                       })}
                     </div>
-                    <h2 className="font-heading font-bold text-pox-cream text-lg leading-snug group-hover:text-pox-gold transition-colors">
+                    <h2 className="font-heading font-bold text-white text-lg leading-snug group-hover:text-pox-gold transition-colors">
                       {post.title}
                     </h2>
-                    <p className="text-pox-cream/70 text-sm mt-2 line-clamp-3">
+                    <p className="text-white/70 text-sm mt-2 line-clamp-3">
                       {post.excerpt}
                     </p>
                     <span className="inline-block mt-3 text-pox-gold text-sm font-semibold">

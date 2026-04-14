@@ -18,7 +18,7 @@ export default function ReservacionesPage() {
         className="relative bg-pox-dark-bg py-16 text-center text-white bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(26,17,13,0.9), rgba(26,17,13,0.95)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80')",
+            "linear-gradient(to bottom, rgba(99,18,31,0.9), rgba(99,18,31,0.95)), url('/images/interior-restaurante.jpg')",
         }}
       >
         <div className="max-w-4xl mx-auto px-4">
@@ -47,10 +47,10 @@ export default function ReservacionesPage() {
               <div className="flex items-start gap-3">
                 <Clock className="text-pox-gold shrink-0 mt-0.5" size={20} />
                 <div>
-                  <p className="font-heading font-bold text-pox-cream text-sm">
+                  <p className="font-heading font-bold text-white text-sm">
                     Respuesta rápida
                   </p>
-                  <p className="text-pox-cream/70 text-sm">
+                  <p className="text-white/70 text-sm">
                     Te confirmamos por WhatsApp en menos de 30 minutos
                   </p>
                 </div>
@@ -58,10 +58,10 @@ export default function ReservacionesPage() {
               <div className="flex items-start gap-3">
                 <Shield className="text-pox-gold shrink-0 mt-0.5" size={20} />
                 <div>
-                  <p className="font-heading font-bold text-pox-cream text-sm">
+                  <p className="font-heading font-bold text-white text-sm">
                     Sin cargos
                   </p>
-                  <p className="text-pox-cream/70 text-sm">
+                  <p className="text-white/70 text-sm">
                     Reservar es completamente gratis, sin compromiso
                   </p>
                 </div>
@@ -69,7 +69,7 @@ export default function ReservacionesPage() {
               <div className="flex items-start gap-3">
                 <Phone className="text-pox-gold shrink-0 mt-0.5" size={20} />
                 <div>
-                  <p className="font-heading font-bold text-pox-cream text-sm">
+                  <p className="font-heading font-bold text-white text-sm">
                     ¿Prefieres llamar?
                   </p>
                   <a
@@ -84,10 +84,10 @@ export default function ReservacionesPage() {
 
             {/* Horarios */}
             <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6">
-              <h3 className="font-heading font-bold text-pox-cream mb-3">
+              <h3 className="font-heading font-bold text-white mb-3">
                 Horarios
               </h3>
-              <ul className="space-y-1.5 text-sm text-pox-cream/70">
+              <ul className="space-y-1.5 text-sm text-white/70">
                 <li>Martes a Jueves: 10:30 – 20:30</li>
                 <li>Viernes y Sábado: 10:30 – 21:00</li>
                 <li>Domingo: 10:30 – 20:30</li>

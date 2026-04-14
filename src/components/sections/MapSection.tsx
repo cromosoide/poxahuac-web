@@ -10,7 +10,7 @@ export function MapSection() {
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-pox-cream text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white text-center mb-12">
             Encuéntranos
           </h2>
         </FadeIn>
@@ -39,18 +39,18 @@ export function MapSection() {
                 <div className="flex items-start gap-3">
                   <MapPin className="text-pox-gold shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="font-heading font-bold text-pox-cream">Dirección</p>
-                    <p className="text-pox-cream/70 text-sm">{BRAND.address.full}</p>
+                    <p className="font-heading font-bold text-white">Dirección</p>
+                    <p className="text-white/70 text-sm">{BRAND.address.full}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <Clock className="text-pox-gold shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="font-heading font-bold text-pox-cream">Horarios</p>
-                    <p className="text-pox-cream/70 text-sm">Mar-Jue: 10:30 – 20:30</p>
-                    <p className="text-pox-cream/70 text-sm">Vie-Sáb: 10:30 – 21:00</p>
-                    <p className="text-pox-cream/70 text-sm">Dom: 10:30 – 20:30</p>
+                    <p className="font-heading font-bold text-white">Horarios</p>
+                    <p className="text-white/70 text-sm">Mar-Jue: 10:30 – 20:30</p>
+                    <p className="text-white/70 text-sm">Vie-Sáb: 10:30 – 21:00</p>
+                    <p className="text-white/70 text-sm">Dom: 10:30 – 20:30</p>
                     <p className="text-pox-red text-sm font-semibold">Lun: Cerrado</p>
                   </div>
                 </div>
@@ -58,8 +58,8 @@ export function MapSection() {
                 <div className="flex items-start gap-3">
                   <Phone className="text-pox-gold shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="font-heading font-bold text-pox-cream">Teléfono</p>
-                    <a href={`tel:${BRAND.phone}`} className="text-pox-cream/70 text-sm hover:text-pox-gold transition-colors">
+                    <p className="font-heading font-bold text-white">Teléfono</p>
+                    <a href={`tel:${BRAND.phone}`} className="text-white/70 text-sm hover:text-pox-gold transition-colors">
                       {BRAND.phoneDisplay}
                     </a>
                   </div>

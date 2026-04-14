@@ -94,28 +94,29 @@ export default async function BlogPostPage({
         </div>
       </div>
 
+      <div className="bg-pox-cream">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Article content */}
           <article className="lg:col-span-2">
             <div
-              className="prose prose-lg max-w-none text-pox-cream/70
-                prose-headings:font-heading prose-headings:text-pox-cream
+              className="prose prose-lg max-w-none text-pox-brown/80
+                prose-headings:font-heading prose-headings:text-pox-brown
                 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
                 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-strong:text-pox-cream
-                prose-a:text-pox-gold prose-a:no-underline hover:prose-a:underline
-                prose-li:marker:text-pox-gold"
+                prose-strong:text-pox-brown
+                prose-a:text-pox-red prose-a:no-underline hover:prose-a:underline
+                prose-li:marker:text-pox-red"
               dangerouslySetInnerHTML={{ __html: formatContent(post.content) }}
             />
 
             {/* Keywords */}
-            <div className="mt-10 pt-6 border-t border-pox-gold/20">
+            <div className="mt-10 pt-6 border-t border-pox-brown/20">
               <div className="flex flex-wrap gap-2">
                 {post.keywords.map((keyword) => (
                   <span
                     key={keyword}
-                    className="px-3 py-1 bg-pox-dark-surface rounded-full text-xs text-pox-cream/70 border border-pox-gold/20"
+                    className="px-3 py-1 bg-white rounded-full text-xs text-pox-brown/70 border border-pox-brown/10"
                   >
                     {keyword}
                   </span>
@@ -126,17 +127,17 @@ export default async function BlogPostPage({
 
           {/* Sidebar */}
           <aside className="space-y-6">
-            <div className="bg-pox-dark-surface rounded-2xl p-6 sticky top-[90px] border border-pox-gold/20">
-              <h3 className="font-heading font-bold text-pox-cream mb-4">
+            <div className="bg-white rounded-2xl p-6 sticky top-[90px] border border-pox-brown/10 shadow-sm">
+              <h3 className="font-heading font-bold text-pox-brown mb-4">
                 Visítanos
               </h3>
               <div className="space-y-3 text-sm">
-                <div className="flex items-start gap-2 text-pox-cream/70">
-                  <MapPin size={16} className="text-pox-gold shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2 text-pox-brown/70">
+                  <MapPin size={16} className="text-pox-red shrink-0 mt-0.5" />
                   {BRAND.address.full}
                 </div>
-                <div className="flex items-start gap-2 text-pox-cream/70">
-                  <Clock size={16} className="text-pox-gold shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2 text-pox-brown/70">
+                  <Clock size={16} className="text-pox-red shrink-0 mt-0.5" />
                   {BRAND.hoursDisplay}
                 </div>
               </div>
@@ -168,6 +169,7 @@ export default async function BlogPostPage({
             </div>
           </aside>
         </div>
+      </div>
       </div>
 
       <script

@@ -174,13 +174,13 @@ export default function InsumosPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Controls */}
         <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 sm:p-8 mb-8">
-          <h2 className="font-heading font-bold text-pox-cream text-lg mb-6">
+          <h2 className="font-heading font-bold text-white text-lg mb-6">
             Configuracion
           </h2>
 
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-pox-cream mb-2">
+              <label className="block text-sm font-semibold text-white mb-2">
                 Personas esperadas: <span className="text-pox-red text-xl">{personas}</span>
               </label>
               <input
@@ -192,7 +192,7 @@ export default function InsumosPage() {
                 onChange={(e) => setPersonas(Number(e.target.value))}
                 className="w-full accent-pox-gold"
               />
-              <div className="flex justify-between text-xs text-pox-cream/70">
+              <div className="flex justify-between text-xs text-white/70">
                 <span>10</span>
                 <span>200</span>
               </div>
@@ -200,7 +200,7 @@ export default function InsumosPage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-pox-cream mb-1">
+                <label className="block text-xs font-semibold text-white mb-1">
                   % Pozole Rojo
                 </label>
                 <input
@@ -213,7 +213,7 @@ export default function InsumosPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-pox-cream mb-1">
+                <label className="block text-xs font-semibold text-white mb-1">
                   % Pozole Blanco
                 </label>
                 <input
@@ -226,7 +226,7 @@ export default function InsumosPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-pox-cream mb-1">
+                <label className="block text-xs font-semibold text-white mb-1">
                   % Pozole Verde
                 </label>
                 <input
@@ -239,7 +239,7 @@ export default function InsumosPage() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-pox-cream mb-1">
+                <label className="block text-xs font-semibold text-white mb-1">
                   % Antojitos
                 </label>
                 <input
@@ -264,7 +264,7 @@ export default function InsumosPage() {
         {/* Results */}
         <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 sm:p-8 mb-8">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-            <h2 className="font-heading font-bold text-pox-cream text-lg">
+            <h2 className="font-heading font-bold text-white text-lg">
               Lista de Insumos
             </h2>
             <div className="flex gap-2">
@@ -289,7 +289,7 @@ export default function InsumosPage() {
               <div key={category} className="mb-6">
                 <h3 className="font-heading font-semibold text-pox-red text-sm uppercase tracking-wider mb-3">
                   {category}{" "}
-                  <span className="text-pox-cream/70 font-normal normal-case">
+                  <span className="text-white/70 font-normal normal-case">
                     ({count} personas)
                   </span>
                 </h3>
@@ -297,10 +297,10 @@ export default function InsumosPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-pox-gold/20">
-                        <th className="text-left py-2 text-pox-cream/70 font-normal">Ingrediente</th>
-                        <th className="text-right py-2 text-pox-cream/70 font-normal">Por persona</th>
-                        <th className="text-right py-2 text-pox-cream font-semibold">Total</th>
-                        <th className="text-right py-2 text-pox-cream/70 font-normal">Costo est.</th>
+                        <th className="text-left py-2 text-white/70 font-normal">Ingrediente</th>
+                        <th className="text-right py-2 text-white/70 font-normal">Por persona</th>
+                        <th className="text-right py-2 text-white font-semibold">Total</th>
+                        <th className="text-right py-2 text-white/70 font-normal">Costo est.</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -309,14 +309,14 @@ export default function InsumosPage() {
                         categoryCost += cost;
                         return (
                           <tr key={ing.name} className="border-b border-pox-gold/10">
-                            <td className="py-2 text-pox-cream">{ing.name}</td>
-                            <td className="py-2 text-right text-pox-cream/70">
+                            <td className="py-2 text-white">{ing.name}</td>
+                            <td className="py-2 text-right text-white/70">
                               {ing.perPerson} {ing.unit}
                             </td>
                             <td className="py-2 text-right font-bold text-pox-red">
                               {calculateAmount(ing.perPerson, count)} {ing.unit}
                             </td>
-                            <td className="py-2 text-right text-pox-cream/70">
+                            <td className="py-2 text-right text-white/70">
                               ${cost.toFixed(0)}
                             </td>
                           </tr>
@@ -325,8 +325,8 @@ export default function InsumosPage() {
                     </tbody>
                     <tfoot>
                       <tr className="border-t border-pox-gold/30">
-                        <td colSpan={3} className="py-2 text-right text-sm font-semibold text-pox-cream">Subtotal {category}:</td>
-                        <td className="py-2 text-right font-bold text-pox-cream">${categoryCost.toFixed(0)}</td>
+                        <td colSpan={3} className="py-2 text-right text-sm font-semibold text-white">Subtotal {category}:</td>
+                        <td className="py-2 text-right font-bold text-white">${categoryCost.toFixed(0)}</td>
                       </tr>
                     </tfoot>
                   </table>
@@ -337,10 +337,10 @@ export default function InsumosPage() {
 
           {/* Grand Total */}
           <div className="mt-4 pt-4 border-t-2 border-pox-gold/20 flex items-center justify-between">
-            <span className="font-heading font-bold text-pox-cream text-lg">Costo Total Estimado</span>
+            <span className="font-heading font-bold text-white text-lg">Costo Total Estimado</span>
             <span className="font-heading font-bold text-pox-red text-2xl">${getTotalCost().toFixed(0)} MXN</span>
           </div>
-          <p className="text-pox-cream/70 text-xs mt-2">
+          <p className="text-white/70 text-xs mt-2">
             * Precios estimados de referencia. Pueden variar segun proveedor y temporada.
           </p>
         </div>

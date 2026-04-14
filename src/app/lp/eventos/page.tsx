@@ -69,7 +69,7 @@ export default function LPEventos() {
           <FadeIn>
             <div className="text-center mb-12">
               <p className="section-label mb-2">Que Celebramos</p>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-pox-cream tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
                 Todo Tipo de Eventos
               </h2>
               <div className="section-divider" />
@@ -84,8 +84,8 @@ export default function LPEventos() {
                     <event.icon className="text-pox-gold" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-heading font-bold text-pox-cream text-lg">{event.title}</h3>
-                    <p className="text-pox-cream/70 text-sm mt-1">{event.description}</p>
+                    <h3 className="font-heading font-bold text-white text-lg">{event.title}</h3>
+                    <p className="text-white/70 text-sm mt-1">{event.description}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -100,7 +100,7 @@ export default function LPEventos() {
           <FadeIn>
             <div className="text-center mb-12">
               <p className="section-label mb-2">Lo Que Incluye</p>
-              <h2 className="text-3xl font-display font-bold text-pox-cream tracking-tight">
+              <h2 className="text-3xl font-display font-bold text-white tracking-tight">
                 Todo para tu Evento
               </h2>
               <div className="section-divider" />
@@ -117,7 +117,7 @@ export default function LPEventos() {
               <FadeIn key={item.text} delay={i * 0.08}>
                 <div className="bg-pox-dark-surface rounded-xl p-6 text-center border border-pox-gold/20">
                   <item.icon className="text-pox-gold mx-auto mb-3" size={32} />
-                  <p className="font-heading font-semibold text-pox-cream">{item.text}</p>
+                  <p className="font-heading font-semibold text-white">{item.text}</p>
                 </div>
               </FadeIn>
             ))}
@@ -125,7 +125,7 @@ export default function LPEventos() {
 
           <FadeIn delay={0.3}>
             <div className="mt-8 bg-pox-dark-surface rounded-2xl p-6 sm:p-8 text-center border border-pox-gold/20">
-              <h3 className="font-heading font-bold text-pox-cream text-lg mb-2">Capacidad</h3>
+              <h3 className="font-heading font-bold text-white text-lg mb-2">Capacidad</h3>
               <p className="text-pox-gray">
                 Interior amplio + terraza al aire libre. Grupos de <strong>10 a 60 personas</strong>.
                 Estacionamiento disponible para tus invitados.
@@ -141,7 +141,7 @@ export default function LPEventos() {
           <FadeIn>
             <div className="text-center mb-10">
               <p className="section-label mb-2">Cotiza Tu Evento</p>
-              <h2 className="text-3xl font-display font-bold text-pox-cream tracking-tight">
+              <h2 className="text-3xl font-display font-bold text-white tracking-tight">
                 Cuentanos tu Idea
               </h2>
               <div className="section-divider" />
@@ -151,37 +151,37 @@ export default function LPEventos() {
           <FadeIn delay={0.1}>
             <form onSubmit={handleSubmit} className="bg-pox-cream rounded-2xl p-6 sm:p-8 space-y-5">
               <div>
-                <label htmlFor="nombre" className="block text-sm font-semibold text-pox-cream mb-1">Nombre</label>
+                <label htmlFor="nombre" className="block text-sm font-semibold text-white mb-1">Nombre</label>
                 <input
                   id="nombre"
                   type="text"
                   required
                   value={form.nombre}
                   onChange={(e) => setForm({ ...form, nombre: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
                   placeholder="Tu nombre"
                 />
               </div>
               <div>
-                <label htmlFor="telefono" className="block text-sm font-semibold text-pox-cream mb-1">Telefono</label>
+                <label htmlFor="telefono" className="block text-sm font-semibold text-white mb-1">Telefono</label>
                 <input
                   id="telefono"
                   type="tel"
                   required
                   value={form.telefono}
                   onChange={(e) => setForm({ ...form, telefono: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
                   placeholder="55 1234 5678"
                 />
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="tipo" className="block text-sm font-semibold text-pox-cream mb-1">Tipo de Evento</label>
+                  <label htmlFor="tipo" className="block text-sm font-semibold text-white mb-1">Tipo de Evento</label>
                   <select
                     id="tipo"
                     value={form.tipo}
                     onChange={(e) => setForm({ ...form, tipo: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
                   >
                     <option>Cumpleanos</option>
                     <option>Reunion Familiar</option>
@@ -191,7 +191,7 @@ export default function LPEventos() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="personas" className="block text-sm font-semibold text-pox-cream mb-1"># Personas</label>
+                  <label htmlFor="personas" className="block text-sm font-semibold text-white mb-1"># Personas</label>
                   <input
                     id="personas"
                     type="number"
@@ -200,19 +200,19 @@ export default function LPEventos() {
                     required
                     value={form.personas}
                     onChange={(e) => setForm({ ...form, personas: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="fecha" className="block text-sm font-semibold text-pox-cream mb-1">Fecha Tentativa</label>
+                <label htmlFor="fecha" className="block text-sm font-semibold text-white mb-1">Fecha Tentativa</label>
                 <input
                   id="fecha"
                   type="date"
                   required
                   value={form.fecha}
                   onChange={(e) => setForm({ ...form, fecha: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-pox-cream"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-pox-gold/30 focus:border-pox-gold focus:outline-none transition-colors bg-pox-dark-surface text-white"
                 />
               </div>
               <button
@@ -238,9 +238,9 @@ export default function LPEventos() {
                       <svg key={j} className="w-4 h-4 text-pox-gold fill-pox-gold" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                     ))}
                   </div>
-                  <p className="text-pox-cream/70 text-sm leading-relaxed mb-4">&ldquo;{t.text}&rdquo;</p>
-                  <p className="font-heading font-semibold text-pox-cream text-sm">{t.name}</p>
-                  <p className="text-pox-cream/50 text-xs">{t.source}</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">&ldquo;{t.text}&rdquo;</p>
+                  <p className="font-heading font-semibold text-white text-sm">{t.name}</p>
+                  <p className="text-white/50 text-xs">{t.source}</p>
                 </div>
               </FadeIn>
             ))}
@@ -255,7 +255,7 @@ export default function LPEventos() {
             <MapPin className="text-pox-red mx-auto mb-3" size={32} />
             <h2 className="text-2xl font-display font-bold text-pox-brown mb-2">Nos Encuentras En</h2>
             <p className="text-pox-gray mb-2">{BRAND.address.full}</p>
-            <p className="text-pox-cream/70 text-sm">{BRAND.hoursDisplay}</p>
+            <p className="text-white/70 text-sm">{BRAND.hoursDisplay}</p>
           </FadeIn>
         </div>
       </section>

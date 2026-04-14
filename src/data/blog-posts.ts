@@ -39,7 +39,7 @@ El pozole no es solo comida: es un acto comunitario. En México, el pozole se si
 **¿Quieres probar un pozole auténtico preparado con la técnica ancestral náhuatl?** Visítanos en Poxahuac, en el corazón de Amecameca.
     `,
     date: "2026-03-15",
-    image: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=1200&q=80",
+    image: "/images/mesa-completa.jpg",
     keywords: ["historia del pozole", "pozole prehispanico", "origen del pozole", "pozole nahuatl", "comida mexicana tradicional"],
     author: "Poxahuac",
   },
