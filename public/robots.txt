@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /herramientas/insumos
+
+Sitemap: https://poxahuac.com/sitemap.xml
