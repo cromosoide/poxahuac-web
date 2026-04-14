@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -10,23 +11,11 @@ interface ImageRevealProps {
   delay?: number;
 }
 
-const clipPaths = {
-  left: {
-    hidden: "inset(0 100% 0 0)",
-    visible: "inset(0 0% 0 0)",
-  },
-  right: {
-    hidden: "inset(0 0 0 100%)",
-    visible: "inset(0 0 0 0%)",
-  },
-  up: {
-    hidden: "inset(100% 0 0 0)",
-    visible: "inset(0% 0 0 0)",
-  },
-  down: {
-    hidden: "inset(0 0 100% 0)",
-    visible: "inset(0 0 0% 0)",
-  },
+const translateMap = {
+  left: { x: "-100%", y: "0%" },
+  right: { x: "100%", y: "0%" },
+  up: { x: "0%", y: "100%" },
+  down: { x: "0%", y: "-100%" },
 };
 
 export function ImageReveal({
@@ -36,26 +25,35 @@ export function ImageReveal({
   delay = 0,
 }: ImageRevealProps) {
   const shouldReduceMotion = useReducedMotion();
+  const [forceVisible, setForceVisible] = useState(false);
 
-  if (shouldReduceMotion) {
+  // Safety timeout: if animation hasn't triggered in 3s, force visible
+  useEffect(() => {
+    const timer = setTimeout(() => setForceVisible(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (shouldReduceMotion || forceVisible) {
     return <div className={className}>{children}</div>;
   }
 
-  const clip = clipPaths[direction];
+  const translate = translateMap[direction];
 
   return (
-    <motion.div
-      className={className}
-      initial={{ clipPath: clip.hidden, opacity: 0.3 }}
-      whileInView={{ clipPath: clip.visible, opacity: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{
-        duration: 0.8,
-        delay,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
-    >
-      {children}
-    </motion.div>
+    <div className={`overflow-hidden ${className ?? ""}`}>
+      <motion.div
+        initial={{ x: translate.x, y: translate.y, opacity: 0 }}
+        whileInView={{ x: "0%", y: "0%", opacity: 1 }}
+        viewport={{ once: true, margin: "-20px" }}
+        transition={{
+          duration: 0.7,
+          delay,
+          ease: [0.25, 0.46, 0.45, 0.94],
+        }}
+        onAnimationComplete={() => setForceVisible(true)}
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 }

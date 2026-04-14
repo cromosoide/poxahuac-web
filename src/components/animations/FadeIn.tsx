@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -26,8 +27,14 @@ export function FadeIn({
   className,
 }: FadeInProps) {
   const shouldReduceMotion = useReducedMotion();
+  const [forceVisible, setForceVisible] = useState(false);
 
-  if (shouldReduceMotion) {
+  useEffect(() => {
+    const timer = setTimeout(() => setForceVisible(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (shouldReduceMotion || forceVisible) {
     return <div className={className}>{children}</div>;
   }
 
@@ -40,6 +47,7 @@ export function FadeIn({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration, delay, ease: "easeOut" }}
       className={className}
+      onAnimationComplete={() => setForceVisible(true)}
     >
       {children}
     </motion.div>
