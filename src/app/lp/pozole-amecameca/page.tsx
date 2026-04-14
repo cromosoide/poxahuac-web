@@ -21,9 +21,9 @@ const whatsappUrl = `https://wa.me/${BRAND.whatsappFull}?text=${encodeURICompone
 
 export default function LPPozoleAmecameca() {
   return (
-    <div className="bg-white">
+    <div className="bg-pox-brown">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center bg-pox-red-dark overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center bg-pox-dark-bg overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=1200&q=80"
           alt="Pozole rojo tradicional de Poxahuac"
@@ -64,34 +64,34 @@ export default function LPPozoleAmecameca() {
       </section>
 
       {/* Propuestas de valor */}
-      <section className="py-16 bg-pox-cream">
+      <section className="py-16 bg-pox-dark-bg">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid sm:grid-cols-3 gap-8">
             <FadeIn delay={0}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-pox-red/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Utensils className="text-pox-red" size={28} />
+                <div className="w-16 h-16 bg-pox-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Utensils className="text-pox-gold" size={28} />
                 </div>
-                <h3 className="font-heading font-bold text-pox-brown text-lg mb-2">Pozole Tradicional</h3>
-                <p className="text-pox-gray text-sm">Maiz cacahuazintle preparado con la tecnica ancestral nahuatl. Esponjoso de verdad.</p>
+                <h3 className="font-heading font-bold text-pox-cream text-lg mb-2">Pozole Tradicional</h3>
+                <p className="text-pox-cream/70 text-sm">Maiz cacahuazintle preparado con la tecnica ancestral nahuatl. Esponjoso de verdad.</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-pox-red/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="text-pox-red" size={28} />
+                <div className="w-16 h-16 bg-pox-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="text-pox-gold" size={28} />
                 </div>
-                <h3 className="font-heading font-bold text-pox-brown text-lg mb-2">Vista a los Volcanes</h3>
-                <p className="text-pox-gray text-sm">Terraza con vista al Popocatepetl e Iztaccihuatl. A 1 hora de CDMX.</p>
+                <h3 className="font-heading font-bold text-pox-cream text-lg mb-2">Vista a los Volcanes</h3>
+                <p className="text-pox-cream/70 text-sm">Terraza con vista al Popocatepetl e Iztaccihuatl. A 1 hora de CDMX.</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
               <div className="text-center">
-                <div className="w-16 h-16 bg-pox-red/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Star className="text-pox-red" size={28} />
+                <div className="w-16 h-16 bg-pox-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Star className="text-pox-gold" size={28} />
                 </div>
-                <h3 className="font-heading font-bold text-pox-brown text-lg mb-2">Ingredientes Locales</h3>
-                <p className="text-pox-gray text-sm">Ingredientes frescos de productores locales de la region de Amecameca.</p>
+                <h3 className="font-heading font-bold text-pox-cream text-lg mb-2">Ingredientes Locales</h3>
+                <p className="text-pox-cream/70 text-sm">Ingredientes frescos de productores locales de la region de Amecameca.</p>
               </div>
             </FadeIn>
           </div>
@@ -104,7 +104,7 @@ export default function LPPozoleAmecameca() {
           <FadeIn>
             <div className="text-center mb-12">
               <p className="section-label mb-2">Nuestros Favoritos</p>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-pox-brown tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-pox-cream tracking-tight">
                 Platillos Estrella
               </h2>
               <div className="section-divider" />
@@ -114,7 +114,7 @@ export default function LPPozoleAmecameca() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredItems.map((item, i) => (
               <FadeIn key={item.id} delay={i * 0.08}>
-                <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 overflow-hidden">
                   <div className="relative aspect-[4/3]">
                     <Image
                       src={item.image}
@@ -126,8 +126,8 @@ export default function LPPozoleAmecameca() {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-heading font-bold text-pox-brown">{item.name}</h3>
-                    <p className="text-pox-gray text-sm mt-1 line-clamp-2">{item.description}</p>
+                    <h3 className="font-heading font-bold text-pox-cream">{item.name}</h3>
+                    <p className="text-pox-cream/70 text-sm mt-1 line-clamp-2">{item.description}</p>
                     <p className="text-pox-gold font-bold text-xl mt-2 font-heading">{formatPrice(item.price)}</p>
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function LPPozoleAmecameca() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-16 bg-pox-cream">
+      <section className="py-16 bg-pox-dark-bg">
         <div className="max-w-5xl mx-auto px-4">
           <FadeIn>
             <div className="text-center mb-10">
@@ -147,7 +147,7 @@ export default function LPPozoleAmecameca() {
                   <Star key={i} className="text-pox-gold fill-pox-gold" size={24} />
                 ))}
               </div>
-              <p className="font-heading font-bold text-pox-brown text-lg">
+              <p className="font-heading font-bold text-pox-cream text-lg">
                 5.0 en TripAdvisor &middot; {BRAND.rating.position}
               </p>
             </div>
@@ -156,15 +156,15 @@ export default function LPPozoleAmecameca() {
           <div className="grid sm:grid-cols-3 gap-6">
             {selectedTestimonials.map((t, i) => (
               <FadeIn key={t.id} delay={i * 0.1}>
-                <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <div className="bg-pox-dark-surface rounded-2xl p-6 border border-pox-gold/20">
                   <div className="flex gap-0.5 mb-3">
                     {[...Array(t.rating)].map((_, j) => (
                       <Star key={j} className="text-pox-gold fill-pox-gold" size={14} />
                     ))}
                   </div>
-                  <p className="text-pox-gray text-sm mb-4 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-                  <p className="font-heading font-semibold text-pox-brown text-sm">{t.name}</p>
-                  <p className="text-pox-gray text-xs">{t.source}</p>
+                  <p className="text-pox-cream/70 text-sm mb-4 leading-relaxed">&ldquo;{t.text}&rdquo;</p>
+                  <p className="font-heading font-semibold text-pox-cream text-sm">{t.name}</p>
+                  <p className="text-pox-cream/50 text-xs">{t.source}</p>
                 </div>
               </FadeIn>
             ))}

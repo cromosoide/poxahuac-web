@@ -45,7 +45,7 @@ export default function UbicacionPage() {
   return (
     <>
       {/* Hero */}
-      <div className="bg-pox-red-dark py-16 text-center text-white">
+      <div className="bg-pox-dark-bg py-16 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-3 tracking-tight">
             Cómo Llegar
@@ -79,7 +79,7 @@ export default function UbicacionPage() {
             </Button>
           </a>
           <a href={WAZE_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="sm" className="bg-white">
+            <Button variant="outline" size="sm">
               Waze
             </Button>
           </a>
@@ -90,23 +90,23 @@ export default function UbicacionPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-heading font-bold text-pox-brown text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-pox-cream text-center mb-12">
               Cómo Llegar a Poxahuac
             </h2>
           </FadeIn>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {directions.map((dir) => (
               <StaggerItem key={dir.title}>
-                <div className="bg-pox-cream rounded-2xl p-6 h-full">
+                <div className="bg-pox-dark-surface rounded-2xl p-6 h-full border border-pox-gold/20">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-pox-red/10 flex items-center justify-center shrink-0">
-                      <dir.icon className="text-pox-red" size={20} />
+                    <div className="w-10 h-10 rounded-full bg-pox-gold/10 flex items-center justify-center shrink-0">
+                      <dir.icon className="text-pox-gold" size={20} />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-pox-brown mb-2">
+                      <h3 className="font-heading font-bold text-pox-cream mb-2">
                         {dir.title}
                       </h3>
-                      <p className="text-pox-gray text-sm leading-relaxed">
+                      <p className="text-pox-cream/70 text-sm leading-relaxed">
                         {dir.description}
                       </p>
                     </div>
@@ -119,20 +119,20 @@ export default function UbicacionPage() {
       </section>
 
       {/* Attractions */}
-      <section className="py-16 lg:py-24 bg-pox-cream">
+      <section className="py-16 lg:py-24 bg-pox-dark-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-heading font-bold text-pox-brown text-center mb-4">
+            <h2 className="text-3xl font-heading font-bold text-pox-cream text-center mb-4">
               Qué Hacer en Amecameca
             </h2>
-            <p className="text-pox-gray text-center mb-12 max-w-2xl mx-auto">
+            <p className="text-pox-cream/70 text-center mb-12 max-w-2xl mx-auto">
               Poxahuac es tu parada obligada en la ruta turística de Amecameca y los volcanes.
             </p>
           </FadeIn>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {attractions.map((attraction) => (
               <StaggerItem key={attraction.id}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-200">
+                <div className="bg-pox-dark-surface rounded-2xl overflow-hidden border border-pox-gold/20 hover:-translate-y-1 hover:shadow-xl transition-all duration-200">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={attraction.image}
@@ -143,10 +143,10 @@ export default function UbicacionPage() {
                     />
                   </div>
                   <div className="p-5">
-                    <h3 className="font-heading font-bold text-pox-brown">
+                    <h3 className="font-heading font-bold text-pox-cream">
                       {attraction.name}
                     </h3>
-                    <p className="text-pox-gray text-sm mt-1 line-clamp-3">
+                    <p className="text-pox-cream/70 text-sm mt-1 line-clamp-3">
                       {attraction.description}
                     </p>
                     <p className="text-pox-gold text-sm font-semibold mt-2">

@@ -27,10 +27,10 @@ const features = [
 
 export function Features() {
   return (
-    <section className="py-16 lg:py-24 bg-pox-cream">
+    <section className="py-16 lg:py-24 bg-pox-dark-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="section-label text-center mb-3">Nuestra Esencia</p>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-pox-brown text-center mb-2 tracking-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-pox-cream text-center mb-2 tracking-tight">
           Lo que nos hace únicos
         </h2>
         <div className="section-divider mb-12" />
@@ -39,14 +39,14 @@ export function Features() {
           {features.map((feature) => (
             <StaggerItem key={feature.title}>
               <TiltCard>
-                <div className="bg-white rounded-2xl p-8 text-center shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-200">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-pox-red/10 text-pox-red mb-5">
+                <div className="bg-pox-dark-surface rounded-2xl p-8 text-center border border-pox-gold/20 hover:-translate-y-1 hover:shadow-xl transition-all duration-200">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-pox-gold/10 text-pox-gold mb-5">
                     <feature.icon size={32} />
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-pox-brown mb-3">
+                  <h3 className="text-xl font-heading font-bold text-pox-cream mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-pox-gray leading-relaxed">
+                  <p className="text-pox-cream/70 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

@@ -15,7 +15,7 @@ export function FAQ() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <p className="section-label text-center mb-3">Preguntas Frecuentes</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-pox-brown text-center mb-2 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-pox-cream text-center mb-2 tracking-tight">
             Resolvemos tus dudas
           </h2>
           <div className="section-divider mb-12" />
@@ -24,10 +24,10 @@ export function FAQ() {
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <FadeIn key={i} delay={i * 0.05}>
-              <div className="bg-pox-cream rounded-xl overflow-hidden">
+              <div className="bg-pox-dark-surface rounded-xl overflow-hidden border border-pox-gold/20">
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex items-center justify-between p-5 text-left font-heading font-semibold text-pox-brown hover:text-pox-red transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left font-heading font-semibold text-pox-cream hover:text-pox-gold transition-colors"
                   aria-expanded={openIndex === i}
                 >
                   {faq.question}
@@ -47,7 +47,7 @@ export function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="px-5 pb-5 text-pox-gray leading-relaxed">
+                      <p className="px-5 pb-5 text-pox-cream/70 leading-relaxed">
                         {faq.answer}
                       </p>
                     </motion.div>

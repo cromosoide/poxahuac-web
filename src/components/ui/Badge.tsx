@@ -8,7 +8,7 @@ const BADGE_CONFIG: Record<MenuBadge, { label: string; className: string }> = {
   },
   nuevo: {
     label: "Nuevo",
-    className: "bg-pox-gold text-white",
+    className: "bg-pox-gold/20 text-pox-gold border border-pox-gold/40",
   },
   vegetariano: {
     label: "Vegetariano",

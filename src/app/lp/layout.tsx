@@ -41,7 +41,7 @@ export default function LPLayout({
       `}</style>
 
       {/* Minimal header */}
-      <div className="bg-pox-red-dark py-3 px-4 sm:px-6">
+      <div className="bg-pox-brown py-3 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <Link
             href="/"

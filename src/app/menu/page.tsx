@@ -14,7 +14,7 @@ export default function MenuPage() {
   return (
     <>
       {/* Hero */}
-      <div className="bg-pox-red-dark pt-8 pb-12 text-center text-white">
+      <div className="bg-pox-dark-bg pt-8 pb-12 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-3 tracking-tight">
             Menú de Poxahuac
@@ -43,7 +43,7 @@ export default function MenuPage() {
       </div>
 
       {/* Mobile sticky CTA */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-40">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-pox-dark-surface border-t border-pox-gold/20 p-3 z-40">
         <Link href="/reservaciones" className="block">
           <Button className="w-full">Reservar mesa para probar esto</Button>
         </Link>

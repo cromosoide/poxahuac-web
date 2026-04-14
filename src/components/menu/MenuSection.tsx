@@ -11,7 +11,7 @@ interface MenuSectionProps {
 export function MenuSection({ id, title, icon, items }: MenuSectionProps) {
   return (
     <section id={`menu-${id}`} className="scroll-mt-[140px]">
-      <h2 className="text-2xl sm:text-3xl font-heading font-bold text-pox-brown mb-6 flex items-center gap-2">
+      <h2 className="text-2xl sm:text-3xl font-heading font-bold text-pox-cream mb-6 flex items-center gap-2">
         <span>{icon}</span> {title}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

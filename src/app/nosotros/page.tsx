@@ -47,10 +47,10 @@ export default function NosotrosPage() {
     <>
       {/* Hero */}
       <div
-        className="relative bg-pox-red-dark py-20 text-center text-white bg-cover bg-center"
+        className="relative bg-pox-dark-bg py-20 text-center text-white bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(99,18,31,0.85), rgba(99,18,31,0.95)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80')",
+            "linear-gradient(to bottom, rgba(26,17,13,0.85), rgba(26,17,13,0.95)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80')",
         }}
       >
         <div className="max-w-4xl mx-auto px-4">
@@ -67,7 +67,7 @@ export default function NosotrosPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-heading font-bold text-pox-brown text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-pox-cream text-center mb-12">
               Nuestro Camino
             </h2>
           </FadeIn>
@@ -76,24 +76,24 @@ export default function NosotrosPage() {
       </section>
 
       {/* Filosofía */}
-      <section className="py-16 lg:py-24 bg-pox-cream">
+      <section className="py-16 lg:py-24 bg-pox-dark-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-heading font-bold text-pox-brown text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-pox-cream text-center mb-12">
               Nuestra Filosofía
             </h2>
           </FadeIn>
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {filosofia.map((item) => (
               <StaggerItem key={item.title}>
-                <div className="bg-white rounded-2xl p-8 text-center shadow-md">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-pox-red/10 text-pox-red mb-5">
+                <div className="bg-pox-dark-surface rounded-2xl p-8 text-center border border-pox-gold/20">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-pox-gold/10 text-pox-gold mb-5">
                     <item.icon size={32} />
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-pox-brown mb-3">
+                  <h3 className="text-xl font-heading font-bold text-pox-cream mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-pox-gray leading-relaxed">{item.description}</p>
+                  <p className="text-pox-cream/70 leading-relaxed">{item.description}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -105,12 +105,12 @@ export default function NosotrosPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-heading font-bold text-pox-brown text-center mb-8">
+            <h2 className="text-3xl font-heading font-bold text-pox-cream text-center mb-8">
               El Pozole: Un Platillo con Historia
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="prose prose-lg mx-auto text-pox-gray">
+            <div className="prose prose-lg mx-auto text-pox-cream/70">
               <p>
                 El pozole es uno de los platillos más antiguos de México, con orígenes que se remontan a la época prehispánica. Su nombre viene del náhuatl <em>pozolli</em>, que significa &ldquo;espumoso&rdquo; o &ldquo;hervido&rdquo;, describiendo la forma en que el maíz cacahuazintle revienta al cocerse.
               </p>
@@ -126,7 +126,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Visión - Posicionamiento Futuro */}
-      <section className="py-16 lg:py-24 bg-pox-red-dark text-white">
+      <section className="py-16 lg:py-24 bg-pox-dark-bg text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl font-heading font-bold mb-4">
@@ -153,7 +153,7 @@ export default function NosotrosPage() {
               ¿Interesado en colaboraciones, prensa o alianzas?
             </p>
             <Link href="/contacto">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-pox-red-dark">
+              <Button variant="outline" className="border-pox-gold text-pox-gold hover:bg-pox-gold hover:text-pox-black">
                 Contáctanos
               </Button>
             </Link>
@@ -162,12 +162,12 @@ export default function NosotrosPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 text-center bg-pox-cream">
+      <section className="py-16 text-center bg-pox-dark-surface">
         <FadeIn>
-          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-pox-brown mb-4">
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-pox-cream mb-4">
             Ven a conocernos
           </h2>
-          <p className="text-pox-gray mb-6">
+          <p className="text-pox-cream/70 mb-6">
             Reserva tu mesa y vive la experiencia Poxahuac
           </p>
           <Link href="/reservaciones">

@@ -28,7 +28,7 @@ const bestHours = [
 
 export default function LPEscapadaVolcanes() {
   return (
-    <div className="bg-white">
+    <div className="bg-pox-brown">
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center bg-pox-brown overflow-hidden">
         <Image
@@ -62,7 +62,7 @@ export default function LPEscapadaVolcanes() {
       </section>
 
       {/* Distance */}
-      <section className="py-12 bg-pox-red-dark text-white">
+      <section className="py-12 bg-pox-dark-bg text-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="grid grid-cols-3 gap-4 text-center">
             <FadeIn delay={0}>
@@ -96,7 +96,7 @@ export default function LPEscapadaVolcanes() {
           <FadeIn>
             <div className="text-center mb-12">
               <p className="section-label mb-2">Que Hacer</p>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-pox-brown tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-display font-bold text-pox-cream tracking-tight">
                 Atracciones Cercanas
               </h2>
               <div className="section-divider" />
@@ -106,13 +106,13 @@ export default function LPEscapadaVolcanes() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {attractions.slice(0, 3).map((a, i) => (
               <FadeIn key={a.id} delay={i * 0.08}>
-                <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+                <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 overflow-hidden">
                   <div className="relative aspect-[16/10]">
                     <Image src={a.image} alt={a.name} fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" loading="lazy" />
                   </div>
                   <div className="p-5">
-                    <h3 className="font-heading font-bold text-pox-brown">{a.name}</h3>
-                    <p className="text-pox-gray text-sm mt-1 line-clamp-2">{a.description}</p>
+                    <h3 className="font-heading font-bold text-pox-cream">{a.name}</h3>
+                    <p className="text-pox-cream/70 text-sm mt-1 line-clamp-2">{a.description}</p>
                     <p className="text-pox-gold text-sm font-semibold mt-2 flex items-center gap-1">
                       <MapPin size={14} /> {a.distance}
                     </p>
@@ -123,10 +123,10 @@ export default function LPEscapadaVolcanes() {
           </div>
 
           <FadeIn delay={0.3}>
-            <div className="mt-8 bg-pox-cream rounded-2xl p-6 sm:p-8 text-center">
+            <div className="mt-8 bg-pox-dark-surface rounded-2xl p-6 border border-pox-gold/20 sm:p-8 text-center">
               <Utensils className="text-pox-red mx-auto mb-3" size={28} />
-              <h3 className="font-heading font-bold text-pox-brown text-lg mb-2">+ Poxahuac: Tu Parada Gastronomica</h3>
-              <p className="text-pox-gray text-sm max-w-lg mx-auto">
+              <h3 className="font-heading font-bold text-pox-cream text-lg mb-2">+ Poxahuac: Tu Parada Gastronomica</h3>
+              <p className="text-pox-cream/70 text-sm max-w-lg mx-auto">
                 Despues de explorar los volcanes, nada mejor que un pozole caliente. Terraza pet-friendly, WiFi y estacionamiento.
               </p>
             </div>
@@ -135,12 +135,12 @@ export default function LPEscapadaVolcanes() {
       </section>
 
       {/* Itinerary */}
-      <section className="py-16 bg-pox-cream">
+      <section className="py-16 bg-pox-dark-bg">
         <div className="max-w-3xl mx-auto px-4">
           <FadeIn>
             <div className="text-center mb-12">
               <p className="section-label mb-2">Planea Tu Dia</p>
-              <h2 className="text-3xl font-display font-bold text-pox-brown tracking-tight">
+              <h2 className="text-3xl font-display font-bold text-pox-cream tracking-tight">
                 Itinerario Sugerido
               </h2>
               <div className="section-divider" />
@@ -150,17 +150,17 @@ export default function LPEscapadaVolcanes() {
           <div className="space-y-6">
             {itinerary.map((step, i) => (
               <FadeIn key={step.time} delay={i * 0.1}>
-                <div className="bg-white rounded-2xl p-6 flex gap-5 items-start">
+                <div className="bg-pox-dark-surface rounded-2xl p-6 border border-pox-gold/20 flex gap-5 items-start">
                   <div className="shrink-0 text-center">
-                    <div className="w-14 h-14 bg-pox-red/10 rounded-xl flex items-center justify-center mb-1">
-                      <step.icon className="text-pox-red" size={24} />
+                    <div className="w-14 h-14 bg-pox-gold/10 rounded-xl flex items-center justify-center mb-1">
+                      <step.icon className="text-pox-gold" size={24} />
                     </div>
                     <p className="text-xs text-pox-gold font-heading font-semibold">{step.time}</p>
                   </div>
                   <div>
                     <p className="text-xs font-heading font-semibold text-pox-gold uppercase tracking-wider">{step.label}</p>
-                    <h3 className="font-heading font-bold text-pox-brown text-lg">{step.title}</h3>
-                    <p className="text-pox-gray text-sm mt-1">{step.description}</p>
+                    <h3 className="font-heading font-bold text-pox-cream text-lg">{step.title}</h3>
+                    <p className="text-pox-cream/70 text-sm mt-1">{step.description}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -175,7 +175,7 @@ export default function LPEscapadaVolcanes() {
           <FadeIn>
             <div className="text-center mb-10">
               <p className="section-label mb-2">Mejor Hora Para Visitarnos</p>
-              <h2 className="text-2xl font-display font-bold text-pox-brown tracking-tight">
+              <h2 className="text-2xl font-display font-bold text-pox-cream tracking-tight">
                 Horarios Recomendados
               </h2>
               <div className="section-divider" />
@@ -183,24 +183,24 @@ export default function LPEscapadaVolcanes() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+            <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-pox-cream">
-                    <th className="text-left py-3 px-5 font-heading font-semibold text-pox-brown">Dia</th>
-                    <th className="text-left py-3 px-5 font-heading font-semibold text-pox-brown">Mejor Hora</th>
-                    <th className="text-left py-3 px-5 font-heading font-semibold text-pox-brown">Afluencia</th>
+                  <tr className="bg-pox-dark-bg">
+                    <th className="text-left py-3 px-5 font-heading font-semibold text-pox-cream">Dia</th>
+                    <th className="text-left py-3 px-5 font-heading font-semibold text-pox-cream">Mejor Hora</th>
+                    <th className="text-left py-3 px-5 font-heading font-semibold text-pox-cream">Afluencia</th>
                   </tr>
                 </thead>
                 <tbody>
                   {bestHours.map((row) => (
-                    <tr key={row.day} className="border-t border-gray-100">
-                      <td className="py-3 px-5 text-pox-brown font-medium">{row.day}</td>
+                    <tr key={row.day} className="border-t border-pox-gold/20">
+                      <td className="py-3 px-5 text-pox-cream font-medium">{row.day}</td>
                       <td className="py-3 px-5 text-pox-gray flex items-center gap-1">
                         <Clock size={14} className="text-pox-gold" /> {row.best}
                       </td>
                       <td className="py-3 px-5">
-                        <span className={`text-xs font-semibold px-2 py-1 rounded-full ${row.level === "Tranquilo" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"}`}>
+                        <span className={`text-xs font-semibold px-2 py-1 rounded-full ${row.level === "Tranquilo" ? "bg-green-900/30 text-green-400" : "bg-yellow-900/30 text-yellow-400"}`}>
                           {row.level}
                         </span>
                       </td>
@@ -223,7 +223,7 @@ export default function LPEscapadaVolcanes() {
               >
                 Reserva para este Fin de Semana
               </a>
-              <p className="text-pox-gray text-sm mt-3">
+              <p className="text-pox-cream/50 text-sm mt-3">
                 <MapPin className="inline" size={14} /> {BRAND.address.full}
               </p>
             </div>

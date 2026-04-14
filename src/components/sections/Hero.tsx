@@ -39,7 +39,7 @@ export function Hero() {
       />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-pox-red-dark via-pox-red-dark/70 to-pox-red-dark/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-pox-brown via-pox-brown/70 to-pox-brown/40" />
 
       {/* Floating elements */}
       <FloatingElements />
@@ -74,7 +74,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-pox-red-dark w-full sm:w-auto"
+                className="border-pox-gold text-pox-gold hover:bg-pox-gold hover:text-pox-black w-full sm:w-auto"
               >
                 Ver Menú
               </Button>

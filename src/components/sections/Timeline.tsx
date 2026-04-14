@@ -40,17 +40,17 @@ export function Timeline() {
           <FadeIn key={i} delay={i * 0.15} direction={i % 2 === 0 ? "left" : "right"}>
             <div className={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
               {/* Dot */}
-              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-pox-red border-4 border-white shadow-md z-10" />
+              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-pox-gold border-4 border-pox-brown shadow-md z-10" />
 
               {/* Content */}
               <div className={`ml-10 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
                 <span className="inline-block px-3 py-1 bg-pox-red text-white text-xs font-bold rounded-full mb-2">
                   {item.year}
                 </span>
-                <h3 className="text-xl font-heading font-bold text-pox-brown mb-2">
+                <h3 className="text-xl font-heading font-bold text-pox-cream mb-2">
                   {item.title}
                 </h3>
-                <p className="text-pox-gray leading-relaxed">
+                <p className="text-pox-cream/70 leading-relaxed">
                   {item.description}
                 </p>
               </div>

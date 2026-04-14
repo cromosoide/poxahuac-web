@@ -22,11 +22,11 @@ export function Testimonials() {
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
   return (
-    <section className="py-16 lg:py-24 bg-pox-cream">
+    <section className="py-16 lg:py-24 bg-pox-dark-bg">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <p className="section-label text-center mb-3">Testimonios</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-pox-brown text-center mb-2 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-pox-cream text-center mb-2 tracking-tight">
             Lo que dicen nuestros comensales
           </h2>
           <div className="section-divider mb-12" />
@@ -44,7 +44,7 @@ export function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.4 }}
-              className="bg-white rounded-2xl p-8 sm:p-10 shadow-md text-center"
+              className="bg-pox-dark-surface rounded-2xl p-8 sm:p-10 border border-pox-gold/20 text-center"
             >
               {/* Stars */}
               <div className="flex justify-center gap-1 text-yellow-400 mb-4">
@@ -54,13 +54,13 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-lg sm:text-xl text-pox-brown leading-relaxed mb-6">
+              <blockquote className="text-lg sm:text-xl text-pox-cream leading-relaxed mb-6">
                 &ldquo;{testimonials[current].text}&rdquo;
               </blockquote>
 
               {/* Author */}
               <div>
-                <p className="font-heading font-bold text-pox-brown">
+                <p className="font-heading font-bold text-pox-cream">
                   {testimonials[current].name}
                 </p>
                 <p className="text-sm text-pox-gold font-semibold">
@@ -73,14 +73,14 @@ export function Testimonials() {
           {/* Nav buttons */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-pox-brown hover:bg-pox-red hover:text-white transition-colors hidden sm:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-pox-dark-surface border border-pox-gold/20 flex items-center justify-center text-pox-cream hover:bg-pox-gold hover:text-pox-black transition-colors hidden sm:flex"
             aria-label="Reseña anterior"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-pox-brown hover:bg-pox-red hover:text-white transition-colors hidden sm:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-pox-dark-surface border border-pox-gold/20 flex items-center justify-center text-pox-cream hover:bg-pox-gold hover:text-pox-black transition-colors hidden sm:flex"
             aria-label="Siguiente reseña"
           >
             <ChevronRight size={20} />

@@ -10,7 +10,7 @@ export function MapSection() {
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-pox-brown text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-pox-cream text-center mb-12">
             Encuéntranos
           </h2>
         </FadeIn>
@@ -34,32 +34,32 @@ export function MapSection() {
 
           {/* Info card */}
           <FadeIn delay={0.2}>
-            <div className="bg-pox-cream rounded-2xl p-6 sm:p-8 h-full flex flex-col justify-between">
+            <div className="bg-pox-dark-surface rounded-2xl p-6 sm:p-8 h-full flex flex-col justify-between border border-pox-gold/20">
               <div className="space-y-5">
                 <div className="flex items-start gap-3">
-                  <MapPin className="text-pox-red shrink-0 mt-1" size={20} />
+                  <MapPin className="text-pox-gold shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="font-heading font-bold text-pox-brown">Dirección</p>
-                    <p className="text-pox-gray text-sm">{BRAND.address.full}</p>
+                    <p className="font-heading font-bold text-pox-cream">Dirección</p>
+                    <p className="text-pox-cream/70 text-sm">{BRAND.address.full}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Clock className="text-pox-red shrink-0 mt-1" size={20} />
+                  <Clock className="text-pox-gold shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="font-heading font-bold text-pox-brown">Horarios</p>
-                    <p className="text-pox-gray text-sm">Mar-Jue: 10:30 – 20:30</p>
-                    <p className="text-pox-gray text-sm">Vie-Sáb: 10:30 – 21:00</p>
-                    <p className="text-pox-gray text-sm">Dom: 10:30 – 20:30</p>
+                    <p className="font-heading font-bold text-pox-cream">Horarios</p>
+                    <p className="text-pox-cream/70 text-sm">Mar-Jue: 10:30 – 20:30</p>
+                    <p className="text-pox-cream/70 text-sm">Vie-Sáb: 10:30 – 21:00</p>
+                    <p className="text-pox-cream/70 text-sm">Dom: 10:30 – 20:30</p>
                     <p className="text-pox-red text-sm font-semibold">Lun: Cerrado</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="text-pox-red shrink-0 mt-1" size={20} />
+                  <Phone className="text-pox-gold shrink-0 mt-1" size={20} />
                   <div>
-                    <p className="font-heading font-bold text-pox-brown">Teléfono</p>
-                    <a href={`tel:${BRAND.phone}`} className="text-pox-gray text-sm hover:text-pox-red transition-colors">
+                    <p className="font-heading font-bold text-pox-cream">Teléfono</p>
+                    <a href={`tel:${BRAND.phone}`} className="text-pox-cream/70 text-sm hover:text-pox-gold transition-colors">
                       {BRAND.phoneDisplay}
                     </a>
                   </div>

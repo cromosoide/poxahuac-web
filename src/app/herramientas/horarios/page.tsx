@@ -176,7 +176,7 @@ export default function HorariosPage() {
 
   return (
     <>
-      <div className="bg-pox-red-dark py-12 text-center text-white">
+      <div className="bg-pox-dark-bg py-12 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-2 tracking-tight">
             Horarios y Afluencia
@@ -210,7 +210,7 @@ export default function HorariosPage() {
                 "shrink-0 px-5 py-3 rounded-xl font-heading font-semibold transition-all",
                 selectedDay === i
                   ? "bg-pox-red text-white shadow-lg"
-                  : "bg-pox-cream text-pox-brown hover:bg-pox-red/10"
+                  : "bg-pox-dark-surface text-pox-cream hover:bg-pox-gold/10"
               )}
             >
               <span className="hidden sm:inline">{d.name}</span>
@@ -221,8 +221,8 @@ export default function HorariosPage() {
 
         {/* Chart */}
         <FadeIn>
-          <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mb-8">
-            <h2 className="font-heading font-bold text-pox-brown text-xl mb-6">
+          <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 sm:p-8 mb-8">
+            <h2 className="font-heading font-bold text-pox-cream text-xl mb-6">
               {day.name} — Nivel de afluencia
             </h2>
 
@@ -231,10 +231,10 @@ export default function HorariosPage() {
                 const isCurrent = isToday && currentLevel?.time === hour.time;
                 return (
                   <div key={hour.time} className={cn("flex items-center gap-3", isCurrent && "bg-pox-gold/10 -mx-2 px-2 py-1 rounded-lg")}>
-                    <span className="text-sm text-pox-gray w-14 shrink-0 font-mono">
+                    <span className="text-sm text-pox-cream/70 w-14 shrink-0 font-mono">
                       {hour.time}
                     </span>
-                    <div className="flex-1 bg-gray-100 rounded-full h-8 overflow-hidden">
+                    <div className="flex-1 bg-pox-brown rounded-full h-8 overflow-hidden">
                       <div
                         className={cn(
                           "h-full rounded-full transition-all duration-500 flex items-center px-3",
@@ -256,7 +256,7 @@ export default function HorariosPage() {
             </div>
 
             {/* Legend */}
-            <div className="flex gap-4 mt-6 text-xs text-pox-gray">
+            <div className="flex gap-4 mt-6 text-xs text-pox-cream/70">
               <span className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded-full bg-green-400" /> Tranquilo
               </span>
@@ -271,14 +271,14 @@ export default function HorariosPage() {
         </FadeIn>
 
         {/* Recommendation */}
-        <div className="bg-green-50 border border-green-200 rounded-2xl p-6 sm:p-8 mb-8">
+        <div className="bg-green-900/20 border border-green-800/40 rounded-2xl p-6 sm:p-8 mb-8">
           <div className="flex items-start gap-4">
-            <TrendingDown className="text-green-600 shrink-0 mt-1" size={24} />
+            <TrendingDown className="text-green-400 shrink-0 mt-1" size={24} />
             <div>
-              <h3 className="font-heading font-bold text-green-800 text-lg mb-1">
+              <h3 className="font-heading font-bold text-green-400 text-lg mb-1">
                 Recomendacion
               </h3>
-              <p className="text-green-700">
+              <p className="text-green-300">
                 Para una experiencia mas tranquila, te recomendamos visitarnos los{" "}
                 <strong>{day.name}</strong> a las <strong>{day.quietHour}</strong>.
                 Tendras mas espacio, atencion personalizada y podras disfrutar sin prisas.
@@ -302,11 +302,11 @@ export default function HorariosPage() {
         </div>
 
         {/* SEO Content Block */}
-        <div className="bg-pox-cream rounded-2xl p-6 sm:p-8">
-          <h2 className="font-heading font-bold text-pox-brown text-lg mb-3">
+        <div className="bg-pox-dark-surface rounded-2xl p-6 sm:p-8 border border-pox-gold/20">
+          <h2 className="font-heading font-bold text-pox-cream text-lg mb-3">
             Horarios de Poxahuac en Amecameca
           </h2>
-          <div className="text-pox-gray text-sm leading-relaxed space-y-3">
+          <div className="text-pox-cream/70 text-sm leading-relaxed space-y-3">
             <p>
               <strong>Poxahuac</strong> abre de martes a domingo en {BRAND.address.city}, {BRAND.address.state}.
               Nuestro horario es: martes a jueves de 10:30 a 20:30, viernes y sabado de 10:30 a 21:00,

@@ -15,10 +15,10 @@ export default function ReservacionesPage() {
     <div className="min-h-screen">
       {/* Hero */}
       <div
-        className="relative bg-pox-red-dark py-16 text-center text-white bg-cover bg-center"
+        className="relative bg-pox-dark-bg py-16 text-center text-white bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(99,18,31,0.9), rgba(99,18,31,0.95)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80')",
+            "linear-gradient(to bottom, rgba(26,17,13,0.9), rgba(26,17,13,0.95)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80')",
         }}
       >
         <div className="max-w-4xl mx-auto px-4">
@@ -35,7 +35,7 @@ export default function ReservacionesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
           {/* Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+            <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 sm:p-8">
               <ReservationForm />
             </div>
           </div>
@@ -43,38 +43,38 @@ export default function ReservacionesPage() {
           {/* Sidebar */}
           <div className="lg:col-span-2 space-y-6">
             {/* Trust elements */}
-            <div className="bg-pox-cream rounded-2xl p-6 space-y-4">
+            <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 space-y-4">
               <div className="flex items-start gap-3">
-                <Clock className="text-pox-red shrink-0 mt-0.5" size={20} />
+                <Clock className="text-pox-gold shrink-0 mt-0.5" size={20} />
                 <div>
-                  <p className="font-heading font-bold text-pox-brown text-sm">
+                  <p className="font-heading font-bold text-pox-cream text-sm">
                     Respuesta rápida
                   </p>
-                  <p className="text-pox-gray text-sm">
+                  <p className="text-pox-cream/70 text-sm">
                     Te confirmamos por WhatsApp en menos de 30 minutos
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Shield className="text-pox-red shrink-0 mt-0.5" size={20} />
+                <Shield className="text-pox-gold shrink-0 mt-0.5" size={20} />
                 <div>
-                  <p className="font-heading font-bold text-pox-brown text-sm">
+                  <p className="font-heading font-bold text-pox-cream text-sm">
                     Sin cargos
                   </p>
-                  <p className="text-pox-gray text-sm">
+                  <p className="text-pox-cream/70 text-sm">
                     Reservar es completamente gratis, sin compromiso
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="text-pox-red shrink-0 mt-0.5" size={20} />
+                <Phone className="text-pox-gold shrink-0 mt-0.5" size={20} />
                 <div>
-                  <p className="font-heading font-bold text-pox-brown text-sm">
+                  <p className="font-heading font-bold text-pox-cream text-sm">
                     ¿Prefieres llamar?
                   </p>
                   <a
                     href={`tel:${BRAND.phone}`}
-                    className="text-pox-red text-sm font-semibold hover:underline"
+                    className="text-pox-gold text-sm font-semibold hover:underline"
                   >
                     {BRAND.phoneDisplay}
                   </a>
@@ -83,11 +83,11 @@ export default function ReservacionesPage() {
             </div>
 
             {/* Horarios */}
-            <div className="bg-pox-cream rounded-2xl p-6">
-              <h3 className="font-heading font-bold text-pox-brown mb-3">
+            <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6">
+              <h3 className="font-heading font-bold text-pox-cream mb-3">
                 Horarios
               </h3>
-              <ul className="space-y-1.5 text-sm text-pox-gray">
+              <ul className="space-y-1.5 text-sm text-pox-cream/70">
                 <li>Martes a Jueves: 10:30 – 20:30</li>
                 <li>Viernes y Sábado: 10:30 – 21:00</li>
                 <li>Domingo: 10:30 – 20:30</li>

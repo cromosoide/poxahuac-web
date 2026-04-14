@@ -13,7 +13,7 @@ interface MenuNavProps {
 export function MenuNav({ activeCategory, onCategoryChange }: MenuNavProps) {
   return (
     <nav
-      className="sticky top-[72px] z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 py-3"
+      className="sticky top-[72px] z-30 bg-pox-brown/95 backdrop-blur-sm border-b border-pox-gold/20 py-3"
       aria-label="Categorías del menú"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +29,7 @@ export function MenuNav({ activeCategory, onCategoryChange }: MenuNavProps) {
                 "shrink-0 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200",
                 activeCategory === cat.id
                   ? "bg-pox-red text-white"
-                  : "bg-pox-cream text-pox-brown hover:bg-pox-red/10"
+                  : "bg-pox-dark-surface text-pox-cream hover:bg-pox-gold/10"
               )}
             >
               {cat.icon} {cat.label}

@@ -67,7 +67,7 @@ export default async function BlogPostPage({
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-pox-red-dark via-pox-red-dark/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-pox-brown via-pox-brown/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
           <div className="max-w-4xl mx-auto">
             <Link
@@ -99,23 +99,23 @@ export default async function BlogPostPage({
           {/* Article content */}
           <article className="lg:col-span-2">
             <div
-              className="prose prose-lg max-w-none text-pox-gray
-                prose-headings:font-heading prose-headings:text-pox-brown
+              className="prose prose-lg max-w-none text-pox-cream/70
+                prose-headings:font-heading prose-headings:text-pox-cream
                 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
                 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-strong:text-pox-brown
-                prose-a:text-pox-red prose-a:no-underline hover:prose-a:underline
+                prose-strong:text-pox-cream
+                prose-a:text-pox-gold prose-a:no-underline hover:prose-a:underline
                 prose-li:marker:text-pox-gold"
               dangerouslySetInnerHTML={{ __html: formatContent(post.content) }}
             />
 
             {/* Keywords */}
-            <div className="mt-10 pt-6 border-t border-gray-200">
+            <div className="mt-10 pt-6 border-t border-pox-gold/20">
               <div className="flex flex-wrap gap-2">
                 {post.keywords.map((keyword) => (
                   <span
                     key={keyword}
-                    className="px-3 py-1 bg-pox-cream rounded-full text-xs text-pox-gray"
+                    className="px-3 py-1 bg-pox-dark-surface rounded-full text-xs text-pox-cream/70 border border-pox-gold/20"
                   >
                     {keyword}
                   </span>
@@ -126,17 +126,17 @@ export default async function BlogPostPage({
 
           {/* Sidebar */}
           <aside className="space-y-6">
-            <div className="bg-pox-cream rounded-2xl p-6 sticky top-[90px]">
-              <h3 className="font-heading font-bold text-pox-brown mb-4">
+            <div className="bg-pox-dark-surface rounded-2xl p-6 sticky top-[90px] border border-pox-gold/20">
+              <h3 className="font-heading font-bold text-pox-cream mb-4">
                 Visítanos
               </h3>
               <div className="space-y-3 text-sm">
-                <div className="flex items-start gap-2 text-pox-gray">
-                  <MapPin size={16} className="text-pox-red shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2 text-pox-cream/70">
+                  <MapPin size={16} className="text-pox-gold shrink-0 mt-0.5" />
                   {BRAND.address.full}
                 </div>
-                <div className="flex items-start gap-2 text-pox-gray">
-                  <Clock size={16} className="text-pox-red shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2 text-pox-cream/70">
+                  <Clock size={16} className="text-pox-gold shrink-0 mt-0.5" />
                   {BRAND.hoursDisplay}
                 </div>
               </div>

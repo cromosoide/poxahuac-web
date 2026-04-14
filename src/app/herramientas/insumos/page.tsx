@@ -173,14 +173,14 @@ export default function InsumosPage() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Controls */}
-        <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mb-8">
-          <h2 className="font-heading font-bold text-pox-brown text-lg mb-6">
+        <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 sm:p-8 mb-8">
+          <h2 className="font-heading font-bold text-pox-cream text-lg mb-6">
             Configuracion
           </h2>
 
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-pox-brown mb-2">
+              <label className="block text-sm font-semibold text-pox-cream mb-2">
                 Personas esperadas: <span className="text-pox-red text-xl">{personas}</span>
               </label>
               <input
@@ -190,9 +190,9 @@ export default function InsumosPage() {
                 step={5}
                 value={personas}
                 onChange={(e) => setPersonas(Number(e.target.value))}
-                className="w-full accent-pox-red"
+                className="w-full accent-pox-gold"
               />
-              <div className="flex justify-between text-xs text-pox-gray">
+              <div className="flex justify-between text-xs text-pox-cream/70">
                 <span>10</span>
                 <span>200</span>
               </div>
@@ -200,7 +200,7 @@ export default function InsumosPage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-pox-brown mb-1">
+                <label className="block text-xs font-semibold text-pox-cream mb-1">
                   % Pozole Rojo
                 </label>
                 <input
@@ -209,11 +209,11 @@ export default function InsumosPage() {
                   max={100}
                   value={pctRojo}
                   onChange={(e) => setPctRojo(Number(e.target.value))}
-                  className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg text-center font-bold"
+                  className="w-full px-3 py-2 border-2 border-pox-gold/30 rounded-lg text-center font-bold"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-pox-brown mb-1">
+                <label className="block text-xs font-semibold text-pox-cream mb-1">
                   % Pozole Blanco
                 </label>
                 <input
@@ -222,11 +222,11 @@ export default function InsumosPage() {
                   max={100}
                   value={pctBlanco}
                   onChange={(e) => setPctBlanco(Number(e.target.value))}
-                  className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg text-center font-bold"
+                  className="w-full px-3 py-2 border-2 border-pox-gold/30 rounded-lg text-center font-bold"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-pox-brown mb-1">
+                <label className="block text-xs font-semibold text-pox-cream mb-1">
                   % Pozole Verde
                 </label>
                 <input
@@ -235,11 +235,11 @@ export default function InsumosPage() {
                   max={100}
                   value={pctVerde}
                   onChange={(e) => setPctVerde(Number(e.target.value))}
-                  className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg text-center font-bold"
+                  className="w-full px-3 py-2 border-2 border-pox-gold/30 rounded-lg text-center font-bold"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-pox-brown mb-1">
+                <label className="block text-xs font-semibold text-pox-cream mb-1">
                   % Antojitos
                 </label>
                 <input
@@ -248,7 +248,7 @@ export default function InsumosPage() {
                   max={100}
                   value={pctAntojitos}
                   onChange={(e) => setPctAntojitos(Number(e.target.value))}
-                  className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg text-center font-bold"
+                  className="w-full px-3 py-2 border-2 border-pox-gold/30 rounded-lg text-center font-bold"
                 />
               </div>
             </div>
@@ -262,9 +262,9 @@ export default function InsumosPage() {
         </div>
 
         {/* Results */}
-        <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mb-8">
+        <div className="bg-pox-dark-surface rounded-2xl border border-pox-gold/20 p-6 sm:p-8 mb-8">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-            <h2 className="font-heading font-bold text-pox-brown text-lg">
+            <h2 className="font-heading font-bold text-pox-cream text-lg">
               Lista de Insumos
             </h2>
             <div className="flex gap-2">
@@ -289,18 +289,18 @@ export default function InsumosPage() {
               <div key={category} className="mb-6">
                 <h3 className="font-heading font-semibold text-pox-red text-sm uppercase tracking-wider mb-3">
                   {category}{" "}
-                  <span className="text-pox-gray font-normal normal-case">
+                  <span className="text-pox-cream/70 font-normal normal-case">
                     ({count} personas)
                   </span>
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-gray-100">
-                        <th className="text-left py-2 text-pox-gray font-normal">Ingrediente</th>
-                        <th className="text-right py-2 text-pox-gray font-normal">Por persona</th>
-                        <th className="text-right py-2 text-pox-brown font-semibold">Total</th>
-                        <th className="text-right py-2 text-pox-gray font-normal">Costo est.</th>
+                      <tr className="border-b border-pox-gold/20">
+                        <th className="text-left py-2 text-pox-cream/70 font-normal">Ingrediente</th>
+                        <th className="text-right py-2 text-pox-cream/70 font-normal">Por persona</th>
+                        <th className="text-right py-2 text-pox-cream font-semibold">Total</th>
+                        <th className="text-right py-2 text-pox-cream/70 font-normal">Costo est.</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -308,15 +308,15 @@ export default function InsumosPage() {
                         const cost = calculateCost(ing.perPerson, count, ing.costPerUnit);
                         categoryCost += cost;
                         return (
-                          <tr key={ing.name} className="border-b border-gray-50">
-                            <td className="py-2 text-pox-brown">{ing.name}</td>
-                            <td className="py-2 text-right text-pox-gray">
+                          <tr key={ing.name} className="border-b border-pox-gold/10">
+                            <td className="py-2 text-pox-cream">{ing.name}</td>
+                            <td className="py-2 text-right text-pox-cream/70">
                               {ing.perPerson} {ing.unit}
                             </td>
                             <td className="py-2 text-right font-bold text-pox-red">
                               {calculateAmount(ing.perPerson, count)} {ing.unit}
                             </td>
-                            <td className="py-2 text-right text-pox-gray">
+                            <td className="py-2 text-right text-pox-cream/70">
                               ${cost.toFixed(0)}
                             </td>
                           </tr>
@@ -324,9 +324,9 @@ export default function InsumosPage() {
                       })}
                     </tbody>
                     <tfoot>
-                      <tr className="border-t border-gray-200">
-                        <td colSpan={3} className="py-2 text-right text-sm font-semibold text-pox-brown">Subtotal {category}:</td>
-                        <td className="py-2 text-right font-bold text-pox-brown">${categoryCost.toFixed(0)}</td>
+                      <tr className="border-t border-pox-gold/30">
+                        <td colSpan={3} className="py-2 text-right text-sm font-semibold text-pox-cream">Subtotal {category}:</td>
+                        <td className="py-2 text-right font-bold text-pox-cream">${categoryCost.toFixed(0)}</td>
                       </tr>
                     </tfoot>
                   </table>
@@ -336,11 +336,11 @@ export default function InsumosPage() {
           })}
 
           {/* Grand Total */}
-          <div className="mt-4 pt-4 border-t-2 border-pox-red/20 flex items-center justify-between">
-            <span className="font-heading font-bold text-pox-brown text-lg">Costo Total Estimado</span>
+          <div className="mt-4 pt-4 border-t-2 border-pox-gold/20 flex items-center justify-between">
+            <span className="font-heading font-bold text-pox-cream text-lg">Costo Total Estimado</span>
             <span className="font-heading font-bold text-pox-red text-2xl">${getTotalCost().toFixed(0)} MXN</span>
           </div>
-          <p className="text-pox-gray text-xs mt-2">
+          <p className="text-pox-cream/70 text-xs mt-2">
             * Precios estimados de referencia. Pueden variar segun proveedor y temporada.
           </p>
         </div>

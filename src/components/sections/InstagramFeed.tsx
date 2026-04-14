@@ -18,14 +18,14 @@ const instagramPhotos = [
 
 export function InstagramFeed() {
   return (
-    <section className="py-16 lg:py-24 bg-pox-cream">
+    <section className="py-16 lg:py-24 bg-pox-dark-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-pox-brown mb-3">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-pox-cream mb-3">
               Síguenos en Instagram
             </h2>
-            <p className="text-pox-gray">@poxahuac · +5,600 seguidores</p>
+            <p className="text-pox-cream/70">@poxahuac · +5,600 seguidores</p>
           </div>
         </FadeIn>
 
@@ -60,7 +60,7 @@ export function InstagramFeed() {
             href={BRAND.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-pox-red font-heading font-semibold hover:text-pox-red-dark transition-colors"
+            className="inline-flex items-center gap-2 text-pox-gold font-heading font-semibold hover:text-pox-cream transition-colors"
           >
             <Camera size={20} />
             Síguenos en Instagram →

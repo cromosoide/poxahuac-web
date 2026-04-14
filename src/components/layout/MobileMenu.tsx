@@ -35,7 +35,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "tween", duration: 0.3 }}
-          className="fixed inset-0 z-[60] bg-pox-red-dark flex flex-col"
+          className="fixed inset-0 z-[60] bg-pox-black flex flex-col"
           role="dialog"
           aria-modal="true"
           aria-label="Menú de navegación"

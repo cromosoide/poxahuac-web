@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Nunito_Sans, Playfair_Display } from "next/font/google";
+import { DM_Sans, Nunito_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { JsonLd } from "@/lib/schema";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-heading",
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  weight: ["400", "500", "700", "800"],
 });
 
 const nunitoSans = Nunito_Sans({
@@ -18,13 +18,6 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-body",
   display: "swap",
   weight: ["400", "600", "700"],
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-  weight: ["400", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -77,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${plusJakarta.variable} ${nunitoSans.variable} ${playfair.variable}`}
+      className={`${dmSans.variable} ${nunitoSans.variable}`}
     >
       <body className="min-h-screen flex flex-col antialiased">
         <a href="#main-content" className="skip-to-content">
