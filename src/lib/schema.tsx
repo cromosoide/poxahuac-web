@@ -38,7 +38,8 @@ export function getRestaurantSchema() {
         closes: "21:00",
       },
     ],
-    servesCuisine: ["Mexican", "Pozole", "Traditional Mexican"],
+    menu: "https://poxahuac.com/menu",
+    servesCuisine: ["Mexican", "Pozole", "Traditional Mexican", "Comida Mexicana"],
     priceRange: "$$",
     acceptsReservations: true,
     paymentAccepted: ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
@@ -107,6 +108,38 @@ export function getBlogPostSchema(post: {
     image: post.image,
     url: `https://poxahuac.com/blog/${post.slug}`,
     mainEntityOfPage: `https://poxahuac.com/blog/${post.slug}`,
+  };
+}
+
+export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function getWebPageSchema(page: { name: string; description: string; url: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: page.name,
+    description: page.description,
+    url: page.url,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".section-label"],
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Poxahuac",
+      url: "https://poxahuac.com",
+    },
   };
 }
 

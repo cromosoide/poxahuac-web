@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+
 import { menuCategories } from "@/data/menu";
 import { cn } from "@/lib/utils";
 import type { MenuCategory } from "@/types";

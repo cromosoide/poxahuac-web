@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { blogPosts } from "@/data/blog-posts";
-import { FadeIn } from "@/components/animations/FadeIn";
+
 import { StaggerChildren, StaggerItem } from "@/components/animations/StaggerChildren";
 
 export const metadata: Metadata = {

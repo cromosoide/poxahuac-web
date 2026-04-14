@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Calendar, ArrowLeft, MapPin, Clock } from "lucide-react";
 import { blogPosts } from "@/data/blog-posts";
-import { getBlogPostSchema } from "@/lib/schema";
+import { getBlogPostSchema, getBreadcrumbSchema } from "@/lib/schema";
 import { BRAND } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
@@ -49,6 +49,11 @@ export default async function BlogPostPage({
   }
 
   const schema = getBlogPostSchema(post);
+  const breadcrumb = getBreadcrumbSchema([
+    { name: "Inicio", url: "https://poxahuac.com" },
+    { name: "Blog", url: "https://poxahuac.com/blog" },
+    { name: post.title, url: `https://poxahuac.com/blog/${slug}` },
+  ]);
 
   return (
     <>
@@ -168,6 +173,10 @@ export default async function BlogPostPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
     </>
   );

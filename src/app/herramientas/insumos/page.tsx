@@ -1,54 +1,80 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator, Copy, Check } from "lucide-react";
+import { Calculator, Copy, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { BRAND } from "@/lib/constants";
 
 interface Ingredient {
   name: string;
   unit: string;
   perPerson: number;
+  costPerUnit: number;
 }
 
 const INGREDIENTS: Record<string, Ingredient[]> = {
   "Pozole Rojo": [
-    { name: "Maíz pozolero", unit: "kg", perPerson: 0.1 },
-    { name: "Chile guajillo", unit: "kg", perPerson: 0.015 },
-    { name: "Chile ancho", unit: "kg", perPerson: 0.01 },
-    { name: "Ajo", unit: "cabezas", perPerson: 0.05 },
-    { name: "Orégano", unit: "g", perPerson: 2 },
+    { name: "Maiz pozolero", unit: "kg", perPerson: 0.1, costPerUnit: 45 },
+    { name: "Chile guajillo", unit: "kg", perPerson: 0.015, costPerUnit: 180 },
+    { name: "Chile ancho", unit: "kg", perPerson: 0.01, costPerUnit: 200 },
+    { name: "Ajo", unit: "cabezas", perPerson: 0.05, costPerUnit: 15 },
+    { name: "Oregano", unit: "g", perPerson: 2, costPerUnit: 0.5 },
   ],
   "Pozole Blanco": [
-    { name: "Maíz pozolero", unit: "kg", perPerson: 0.1 },
-    { name: "Ajo", unit: "cabezas", perPerson: 0.05 },
-    { name: "Cebolla", unit: "pzas", perPerson: 0.1 },
+    { name: "Maiz pozolero", unit: "kg", perPerson: 0.1, costPerUnit: 45 },
+    { name: "Ajo", unit: "cabezas", perPerson: 0.05, costPerUnit: 15 },
+    { name: "Cebolla", unit: "pzas", perPerson: 0.1, costPerUnit: 12 },
   ],
-  Proteínas: [
-    { name: "Pollo (pechuga)", unit: "kg", perPerson: 0.15 },
-    { name: "Cerdo (maciza)", unit: "kg", perPerson: 0.15 },
+  "Pozole Verde": [
+    { name: "Maiz pozolero", unit: "kg", perPerson: 0.1, costPerUnit: 45 },
+    { name: "Chile poblano", unit: "kg", perPerson: 0.04, costPerUnit: 60 },
+    { name: "Pepita de calabaza", unit: "kg", perPerson: 0.015, costPerUnit: 220 },
+    { name: "Cilantro", unit: "manojos", perPerson: 0.1, costPerUnit: 10 },
+    { name: "Epazote", unit: "manojos", perPerson: 0.05, costPerUnit: 8 },
+    { name: "Ajo", unit: "cabezas", perPerson: 0.05, costPerUnit: 15 },
+  ],
+  Proteinas: [
+    { name: "Pollo (pechuga)", unit: "kg", perPerson: 0.15, costPerUnit: 110 },
+    { name: "Cerdo (maciza)", unit: "kg", perPerson: 0.15, costPerUnit: 130 },
   ],
   Guarniciones: [
-    { name: "Lechuga", unit: "pzas", perPerson: 0.15 },
-    { name: "Rábano", unit: "manojos", perPerson: 0.1 },
-    { name: "Tostadas", unit: "paquetes", perPerson: 0.2 },
-    { name: "Crema", unit: "litros", perPerson: 0.03 },
-    { name: "Queso fresco", unit: "kg", perPerson: 0.02 },
-    { name: "Limón", unit: "kg", perPerson: 0.02 },
-    { name: "Cebolla picada", unit: "kg", perPerson: 0.02 },
-    { name: "Orégano seco", unit: "g", perPerson: 1 },
-    { name: "Chile piquín", unit: "g", perPerson: 0.5 },
+    { name: "Lechuga", unit: "pzas", perPerson: 0.15, costPerUnit: 18 },
+    { name: "Rabano", unit: "manojos", perPerson: 0.1, costPerUnit: 12 },
+    { name: "Tostadas", unit: "paquetes", perPerson: 0.2, costPerUnit: 25 },
+    { name: "Crema", unit: "litros", perPerson: 0.03, costPerUnit: 55 },
+    { name: "Queso fresco", unit: "kg", perPerson: 0.02, costPerUnit: 90 },
+    { name: "Limon", unit: "kg", perPerson: 0.02, costPerUnit: 40 },
+    { name: "Cebolla picada", unit: "kg", perPerson: 0.02, costPerUnit: 25 },
+    { name: "Oregano seco", unit: "g", perPerson: 1, costPerUnit: 0.5 },
+    { name: "Chile piquin", unit: "g", perPerson: 0.5, costPerUnit: 1.2 },
+  ],
+  "Salsa Roja": [
+    { name: "Chile de arbol", unit: "kg", perPerson: 0.005, costPerUnit: 250 },
+    { name: "Tomate rojo", unit: "kg", perPerson: 0.03, costPerUnit: 30 },
+    { name: "Ajo", unit: "cabezas", perPerson: 0.02, costPerUnit: 15 },
+    { name: "Sal", unit: "g", perPerson: 1, costPerUnit: 0.02 },
+  ],
+  "Salsa Verde": [
+    { name: "Tomate verde", unit: "kg", perPerson: 0.03, costPerUnit: 25 },
+    { name: "Chile serrano", unit: "kg", perPerson: 0.008, costPerUnit: 45 },
+    { name: "Cilantro", unit: "manojos", perPerson: 0.05, costPerUnit: 10 },
+    { name: "Cebolla", unit: "pzas", perPerson: 0.03, costPerUnit: 12 },
+    { name: "Ajo", unit: "cabezas", perPerson: 0.02, costPerUnit: 15 },
   ],
 };
 
 export default function InsumosPage() {
   const [personas, setPersonas] = useState(50);
-  const [pctRojo, setPctRojo] = useState(60);
+  const [pctRojo, setPctRojo] = useState(50);
   const [pctBlanco, setPctBlanco] = useState(25);
+  const [pctVerde, setPctVerde] = useState(10);
   const [pctAntojitos, setPctAntojitos] = useState(15);
   const [copied, setCopied] = useState(false);
 
   const personasRojo = Math.round((personas * pctRojo) / 100);
   const personasBlanco = Math.round((personas * pctBlanco) / 100);
+  const personasVerde = Math.round((personas * pctVerde) / 100);
+  const totalPozole = personasRojo + personasBlanco + personasVerde;
 
   function calculateAmount(perPerson: number, count: number): string {
     const total = perPerson * count;
@@ -58,36 +84,57 @@ export default function InsumosPage() {
     return total.toFixed(1);
   }
 
+  function calculateCost(perPerson: number, count: number, costPerUnit: number): number {
+    return perPerson * count * costPerUnit;
+  }
+
+  function getCountForCategory(category: string): number {
+    switch (category) {
+      case "Pozole Rojo": return personasRojo;
+      case "Pozole Blanco": return personasBlanco;
+      case "Pozole Verde": return personasVerde;
+      case "Proteinas": return totalPozole;
+      case "Salsa Roja":
+      case "Salsa Verde":
+        return personas;
+      default: return personas;
+    }
+  }
+
+  function getTotalCost(): number {
+    let total = 0;
+    for (const [category, ingredients] of Object.entries(INGREDIENTS)) {
+      const count = getCountForCategory(category);
+      for (const ing of ingredients) {
+        total += calculateCost(ing.perPerson, count, ing.costPerUnit);
+      }
+    }
+    return total;
+  }
+
   function generateList(): string {
     const lines: string[] = [
-      `📋 LISTA DE INSUMOS — Poxahuac`,
-      `👥 ${personas} personas estimadas`,
-      `🔴 Pozole Rojo: ${pctRojo}% (${personasRojo} personas)`,
-      `⚪ Pozole Blanco: ${pctBlanco}% (${personasBlanco} personas)`,
-      `🌮 Antojitos: ${pctAntojitos}%`,
+      `LISTA DE INSUMOS — Poxahuac`,
+      `${personas} personas estimadas`,
+      `Pozole Rojo: ${pctRojo}% (${personasRojo} personas)`,
+      `Pozole Blanco: ${pctBlanco}% (${personasBlanco} personas)`,
+      `Pozole Verde: ${pctVerde}% (${personasVerde} personas)`,
+      `Antojitos: ${pctAntojitos}%`,
       ``,
-      `--- POZOLE ROJO ---`,
     ];
 
-    INGREDIENTS["Pozole Rojo"].forEach((ing) => {
-      lines.push(`• ${ing.name}: ${calculateAmount(ing.perPerson, personasRojo)} ${ing.unit}`);
-    });
+    for (const [category, ingredients] of Object.entries(INGREDIENTS)) {
+      const count = getCountForCategory(category);
+      lines.push(`--- ${category.toUpperCase()} ---`);
+      for (const ing of ingredients) {
+        const amount = calculateAmount(ing.perPerson, count);
+        const cost = calculateCost(ing.perPerson, count, ing.costPerUnit);
+        lines.push(`• ${ing.name}: ${amount} ${ing.unit} (~$${cost.toFixed(0)})`);
+      }
+      lines.push(``);
+    }
 
-    lines.push(``, `--- POZOLE BLANCO ---`);
-    INGREDIENTS["Pozole Blanco"].forEach((ing) => {
-      lines.push(`• ${ing.name}: ${calculateAmount(ing.perPerson, personasBlanco)} ${ing.unit}`);
-    });
-
-    lines.push(``, `--- PROTEÍNAS ---`);
-    INGREDIENTS["Proteínas"].forEach((ing) => {
-      lines.push(`• ${ing.name}: ${calculateAmount(ing.perPerson, personasRojo + personasBlanco)} ${ing.unit}`);
-    });
-
-    lines.push(``, `--- GUARNICIONES ---`);
-    INGREDIENTS["Guarniciones"].forEach((ing) => {
-      lines.push(`• ${ing.name}: ${calculateAmount(ing.perPerson, personas)} ${ing.unit}`);
-    });
-
+    lines.push(`COSTO TOTAL ESTIMADO: $${getTotalCost().toFixed(0)} MXN`);
     return lines.join("\n");
   }
 
@@ -96,6 +143,13 @@ export default function InsumosPage() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }
+
+  function shareWhatsApp() {
+    const text = encodeURIComponent(generateList());
+    window.open(`https://wa.me/${BRAND.whatsappFull}?text=${text}`, "_blank");
+  }
+
+  const totalPct = pctRojo + pctBlanco + pctVerde + pctAntojitos;
 
   return (
     <>
@@ -112,7 +166,7 @@ export default function InsumosPage() {
             </h1>
           </div>
           <p className="text-white/70 text-sm">
-            Herramienta interna — Calcula ingredientes por número de comensales
+            Herramienta interna — Calcula ingredientes por numero de comensales
           </p>
         </div>
       </div>
@@ -121,7 +175,7 @@ export default function InsumosPage() {
         {/* Controls */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mb-8">
           <h2 className="font-heading font-bold text-pox-brown text-lg mb-6">
-            Configuración
+            Configuracion
           </h2>
 
           <div className="space-y-6">
@@ -144,10 +198,10 @@ export default function InsumosPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div>
                 <label className="block text-xs font-semibold text-pox-brown mb-1">
-                  🔴 % Pozole Rojo
+                  % Pozole Rojo
                 </label>
                 <input
                   type="number"
@@ -160,7 +214,7 @@ export default function InsumosPage() {
               </div>
               <div>
                 <label className="block text-xs font-semibold text-pox-brown mb-1">
-                  ⚪ % Pozole Blanco
+                  % Pozole Blanco
                 </label>
                 <input
                   type="number"
@@ -173,7 +227,20 @@ export default function InsumosPage() {
               </div>
               <div>
                 <label className="block text-xs font-semibold text-pox-brown mb-1">
-                  🌮 % Antojitos
+                  % Pozole Verde
+                </label>
+                <input
+                  type="number"
+                  min={0}
+                  max={100}
+                  value={pctVerde}
+                  onChange={(e) => setPctVerde(Number(e.target.value))}
+                  className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg text-center font-bold"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-pox-brown mb-1">
+                  % Antojitos
                 </label>
                 <input
                   type="number"
@@ -186,9 +253,9 @@ export default function InsumosPage() {
               </div>
             </div>
 
-            {pctRojo + pctBlanco + pctAntojitos !== 100 && (
+            {totalPct !== 100 && (
               <p className="text-orange-500 text-sm font-semibold">
-                ⚠️ Los porcentajes suman {pctRojo + pctBlanco + pctAntojitos}% (deben sumar 100%)
+                Los porcentajes suman {totalPct}% (deben sumar 100%)
               </p>
             )}
           </div>
@@ -196,32 +263,27 @@ export default function InsumosPage() {
 
         {/* Results */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 mb-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
             <h2 className="font-heading font-bold text-pox-brown text-lg">
               Lista de Insumos
             </h2>
-            <Button onClick={copyToClipboard} variant="outline" size="sm">
-              {copied ? (
-                <>
-                  <Check size={16} className="mr-1" /> Copiado
-                </>
-              ) : (
-                <>
-                  <Copy size={16} className="mr-1" /> Copiar lista
-                </>
-              )}
-            </Button>
+            <div className="flex gap-2">
+              <Button onClick={shareWhatsApp} variant="outline" size="sm">
+                <MessageCircle size={16} className="mr-1" /> WhatsApp
+              </Button>
+              <Button onClick={copyToClipboard} variant="outline" size="sm">
+                {copied ? (
+                  <><Check size={16} className="mr-1" /> Copiado</>
+                ) : (
+                  <><Copy size={16} className="mr-1" /> Copiar</>
+                )}
+              </Button>
+            </div>
           </div>
 
           {Object.entries(INGREDIENTS).map(([category, ingredients]) => {
-            const count =
-              category === "Pozole Rojo"
-                ? personasRojo
-                : category === "Pozole Blanco"
-                ? personasBlanco
-                : category === "Proteínas"
-                ? personasRojo + personasBlanco
-                : personas;
+            const count = getCountForCategory(category);
+            let categoryCost = 0;
 
             return (
               <div key={category} className="mb-6">
@@ -238,26 +300,49 @@ export default function InsumosPage() {
                         <th className="text-left py-2 text-pox-gray font-normal">Ingrediente</th>
                         <th className="text-right py-2 text-pox-gray font-normal">Por persona</th>
                         <th className="text-right py-2 text-pox-brown font-semibold">Total</th>
+                        <th className="text-right py-2 text-pox-gray font-normal">Costo est.</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {ingredients.map((ing) => (
-                        <tr key={ing.name} className="border-b border-gray-50">
-                          <td className="py-2 text-pox-brown">{ing.name}</td>
-                          <td className="py-2 text-right text-pox-gray">
-                            {ing.perPerson} {ing.unit}
-                          </td>
-                          <td className="py-2 text-right font-bold text-pox-red">
-                            {calculateAmount(ing.perPerson, count)} {ing.unit}
-                          </td>
-                        </tr>
-                      ))}
+                      {ingredients.map((ing) => {
+                        const cost = calculateCost(ing.perPerson, count, ing.costPerUnit);
+                        categoryCost += cost;
+                        return (
+                          <tr key={ing.name} className="border-b border-gray-50">
+                            <td className="py-2 text-pox-brown">{ing.name}</td>
+                            <td className="py-2 text-right text-pox-gray">
+                              {ing.perPerson} {ing.unit}
+                            </td>
+                            <td className="py-2 text-right font-bold text-pox-red">
+                              {calculateAmount(ing.perPerson, count)} {ing.unit}
+                            </td>
+                            <td className="py-2 text-right text-pox-gray">
+                              ${cost.toFixed(0)}
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
+                    <tfoot>
+                      <tr className="border-t border-gray-200">
+                        <td colSpan={3} className="py-2 text-right text-sm font-semibold text-pox-brown">Subtotal {category}:</td>
+                        <td className="py-2 text-right font-bold text-pox-brown">${categoryCost.toFixed(0)}</td>
+                      </tr>
+                    </tfoot>
                   </table>
                 </div>
               </div>
             );
           })}
+
+          {/* Grand Total */}
+          <div className="mt-4 pt-4 border-t-2 border-pox-red/20 flex items-center justify-between">
+            <span className="font-heading font-bold text-pox-brown text-lg">Costo Total Estimado</span>
+            <span className="font-heading font-bold text-pox-red text-2xl">${getTotalCost().toFixed(0)} MXN</span>
+          </div>
+          <p className="text-pox-gray text-xs mt-2">
+            * Precios estimados de referencia. Pueden variar segun proveedor y temporada.
+          </p>
         </div>
       </div>
     </>
