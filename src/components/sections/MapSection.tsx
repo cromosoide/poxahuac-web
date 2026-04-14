@@ -20,7 +20,7 @@ export function MapSection() {
           <FadeIn className="lg:col-span-2">
             <div className="rounded-2xl overflow-hidden shadow-md h-[400px]">
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.5!2d-98.7631!3d19.1258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPoxahuac!5e0!3m2!1ses!2smx`}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.554045962142!2d-98.77262722383969!3d19.127210182087957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce3deb18935185%3A0x5484125467339c30!2sPoxahuac!5e0!3m2!1ses-419!2smx!4v1776193945108!5m2!1ses-419!2smx"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
