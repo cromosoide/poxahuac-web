@@ -27,7 +27,7 @@ export default function MenuPage() {
 
       <MenuNav activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10 space-y-16">
         {menuCategories.map((cat) => {
           const items = menuItems.filter((item) => item.category === cat.id);
           return (
