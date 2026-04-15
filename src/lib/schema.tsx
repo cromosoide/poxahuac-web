@@ -47,7 +47,6 @@ export function getRestaurantSchema() {
       { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
       { "@type": "LocationFeatureSpecification", name: "Outdoor Seating", value: true },
       { "@type": "LocationFeatureSpecification", name: "Pet Friendly", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Takeout", value: true },
     ],
     aggregateRating: {
       "@type": "AggregateRating",

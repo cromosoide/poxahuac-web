@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "@/hooks/useInView";
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 interface ImageRevealProps {
@@ -11,49 +12,22 @@ interface ImageRevealProps {
   delay?: number;
 }
 
-const translateMap = {
-  left: { x: "-100%", y: "0%" },
-  right: { x: "100%", y: "0%" },
-  up: { x: "0%", y: "100%" },
-  down: { x: "0%", y: "-100%" },
-};
-
 export function ImageReveal({
   children,
   className,
-  direction = "left",
   delay = 0,
 }: ImageRevealProps) {
-  const shouldReduceMotion = useReducedMotion();
-  const [forceVisible, setForceVisible] = useState(false);
-
-  // Safety timeout: if animation hasn't triggered in 3s, force visible
-  useEffect(() => {
-    const timer = setTimeout(() => setForceVisible(true), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (shouldReduceMotion || forceVisible) {
-    return <div className={className}>{children}</div>;
-  }
-
-  const translate = translateMap[direction];
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { rootMargin: "-20px" });
 
   return (
-    <div className={`overflow-hidden ${className ?? ""}`}>
-      <motion.div
-        initial={{ x: translate.x, y: translate.y, opacity: 0 }}
-        whileInView={{ x: "0%", y: "0%", opacity: 1 }}
-        viewport={{ once: true, margin: "-20px" }}
-        transition={{
-          duration: 0.7,
-          delay,
-          ease: [0.25, 0.46, 0.45, 0.94],
-        }}
-        onAnimationComplete={() => setForceVisible(true)}
+    <div ref={ref} className={cn("overflow-hidden", className)}>
+      <div
+        className={cn("anim-fade-in", inView && "in-view")}
+        style={delay ? { transitionDelay: `${delay}s` } : undefined}
       >
         {children}
-      </motion.div>
+      </div>
     </div>
   );
 }

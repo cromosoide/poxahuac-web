@@ -1,25 +1,37 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { testimonials } from "@/data/testimonials";
 import { FadeIn } from "@/components/animations/FadeIn";
 
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     if (paused) return;
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length);
+      setVisible(false);
+      setTimeout(() => {
+        setCurrent((prev) => (prev + 1) % testimonials.length);
+        setVisible(true);
+      }, 400);
     }, 5000);
     return () => clearInterval(timer);
   }, [paused]);
 
-  const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
-  const next = () => setCurrent((c) => (c + 1) % testimonials.length);
+  const goTo = useCallback((index: number) => {
+    setVisible(false);
+    setTimeout(() => {
+      setCurrent(index);
+      setVisible(true);
+    }, 400);
+  }, []);
+
+  const prev = () => goTo((current - 1 + testimonials.length) % testimonials.length);
+  const next = () => goTo((current + 1) % testimonials.length);
 
   return (
     <section className="py-16 lg:py-24 bg-pox-dark-bg">
@@ -37,38 +49,35 @@ export function Testimonials() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.4 }}
-              className="bg-pox-dark-surface rounded-2xl p-8 sm:p-10 border border-pox-gold/20 text-center"
-            >
-              {/* Stars */}
-              <div className="flex justify-center gap-1 text-yellow-400 mb-4">
-                {[...Array(testimonials[current].rating)].map((_, i) => (
-                  <Star key={i} size={20} fill="currentColor" />
-                ))}
-              </div>
+          <div
+            className="bg-pox-dark-surface rounded-2xl p-8 sm:p-10 border border-pox-gold/20 text-center"
+            style={{
+              opacity: visible ? 1 : 0,
+              transition: "opacity 0.4s ease",
+            }}
+          >
+            {/* Stars */}
+            <div className="flex justify-center gap-1 text-yellow-400 mb-4">
+              {[...Array(testimonials[current].rating)].map((_, i) => (
+                <Star key={i} size={20} fill="currentColor" />
+              ))}
+            </div>
 
-              {/* Quote */}
-              <blockquote className="text-lg sm:text-xl text-white leading-relaxed mb-6">
-                &ldquo;{testimonials[current].text}&rdquo;
-              </blockquote>
+            {/* Quote */}
+            <blockquote className="text-lg sm:text-xl text-white leading-relaxed mb-6">
+              &ldquo;{testimonials[current].text}&rdquo;
+            </blockquote>
 
-              {/* Author */}
-              <div>
-                <p className="font-heading font-bold text-white">
-                  {testimonials[current].name}
-                </p>
-                <p className="text-sm text-pox-gold font-semibold">
-                  {testimonials[current].source}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+            {/* Author */}
+            <div>
+              <p className="font-heading font-bold text-white">
+                {testimonials[current].name}
+              </p>
+              <p className="text-sm text-pox-gold font-semibold">
+                {testimonials[current].source}
+              </p>
+            </div>
+          </div>
 
           {/* Nav buttons */}
           <button
@@ -91,7 +100,7 @@ export function Testimonials() {
             {testimonials.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setCurrent(i)}
+                onClick={() => goTo(i)}
                 className={`w-2.5 h-2.5 rounded-full transition-all ${
                   i === current ? "bg-pox-red w-6" : "bg-pox-gold/40"
                 }`}

@@ -40,7 +40,6 @@ export const BRAND = {
     "WiFi gratis",
     "Terraza",
     "Pet-friendly",
-    "Para llevar",
     "Estacionamiento",
   ],
   rating: {

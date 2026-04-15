@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { createContext, useContext, useRef } from "react";
+import { useInView } from "@/hooks/useInView";
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 const StaggerContext = createContext(false);
@@ -14,40 +15,16 @@ interface StaggerChildrenProps {
 
 export function StaggerChildren({
   children,
-  staggerDelay = 0.15,
   className,
 }: StaggerChildrenProps) {
-  const shouldReduceMotion = useReducedMotion();
-  const [forceVisible, setForceVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setForceVisible(true), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (shouldReduceMotion || forceVisible) {
-    return (
-      <StaggerContext.Provider value={true}>
-        <div className={className}>{children}</div>
-      </StaggerContext.Provider>
-    );
-  }
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref);
 
   return (
-    <StaggerContext.Provider value={false}>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: staggerDelay } },
-        }}
-        className={className}
-        onAnimationComplete={() => setForceVisible(true)}
-      >
+    <StaggerContext.Provider value={inView}>
+      <div ref={ref} className={className}>
         {children}
-      </motion.div>
+      </div>
     </StaggerContext.Provider>
   );
 }
@@ -55,26 +32,20 @@ export function StaggerChildren({
 export function StaggerItem({
   children,
   className,
+  index = 0,
 }: {
   children: ReactNode;
   className?: string;
+  index?: number;
 }) {
-  const parentForcedVisible = useContext(StaggerContext);
-
-  // If parent fell back to plain div, render as plain div too
-  if (parentForcedVisible) {
-    return <div className={className}>{children}</div>;
-  }
+  const parentInView = useContext(StaggerContext);
 
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-      }}
-      className={className}
+    <div
+      className={cn("anim-fade-in anim-stagger", parentInView && "in-view", className)}
+      style={{ "--i": index } as React.CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

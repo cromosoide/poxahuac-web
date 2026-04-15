@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "@/hooks/useInView";
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 interface FadeInProps {
@@ -12,44 +13,34 @@ interface FadeInProps {
   className?: string;
 }
 
-const directionOffset = {
-  up: { y: 40 },
-  down: { y: -40 },
-  left: { x: 40 },
-  right: { x: -40 },
+const directionClass: Record<string, string> = {
+  up: "",
+  down: "anim-fade-down",
+  left: "anim-fade-left",
+  right: "anim-fade-right",
 };
 
 export function FadeIn({
   children,
   direction = "up",
   delay = 0,
-  duration = 0.6,
   className,
 }: FadeInProps) {
-  const shouldReduceMotion = useReducedMotion();
-  const [forceVisible, setForceVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setForceVisible(true), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (shouldReduceMotion || forceVisible) {
-    return <div className={className}>{children}</div>;
-  }
-
-  const offset = directionOffset[direction];
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, ...offset }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration, delay, ease: "easeOut" }}
-      className={className}
-      onAnimationComplete={() => setForceVisible(true)}
+    <div
+      ref={ref}
+      className={cn(
+        "anim-fade-in",
+        directionClass[direction],
+        inView && "in-view",
+        className
+      )}
+      style={delay ? { transitionDelay: `${delay}s` } : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

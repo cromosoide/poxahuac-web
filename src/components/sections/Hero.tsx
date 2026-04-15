@@ -1,33 +1,17 @@
 "use client";
 
-import { useRef } from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
-    >
-      {/* Parallax background */}
-      <motion.div
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Static background */}
+      <div
         className="absolute inset-0"
         style={{
-          y: backgroundY,
-          scale: backgroundScale,
           backgroundImage: "url('/images/hero-pozole.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -37,7 +21,7 @@ export function Hero() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-pox-brown via-pox-brown/70 to-pox-brown/40" />
 
-      {/* Content — visible by default, CSS animations for enhancement */}
+      {/* Content — CSS animations for enhancement */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
         <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] tracking-tight mb-6">
           El pozole más esponjoso de Amecameca

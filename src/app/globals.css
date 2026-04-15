@@ -163,6 +163,37 @@ body {
   animation: hero-fade-up 0.6s ease-out 1.6s both;
 }
 
+/* CSS animation system — replaces framer-motion */
+@media (prefers-reduced-motion: no-preference) {
+  .anim-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .anim-fade-in.in-view {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+  .anim-fade-left { transform: translateX(30px); }
+  .anim-fade-right { transform: translateX(-30px); }
+  .anim-fade-down { transform: translateY(-30px); }
+
+  /* Stagger delay via CSS variable */
+  .anim-stagger {
+    transition-delay: calc(var(--i, 0) * 0.12s);
+  }
+}
+
+/* Scroll-snap carousel */
+.snap-carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.snap-carousel::-webkit-scrollbar { display: none; }
+.snap-item { scroll-snap-align: start; }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

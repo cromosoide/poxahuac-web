@@ -125,7 +125,7 @@ export function Footer() {
 
         {/* Badges */}
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-3 justify-center">
-          {["Pueblo con Encanto", "Pet Friendly 🐾", "WiFi Gratis 📶", "Terraza", "Para Llevar"].map(
+          {["Pueblo con Encanto", "Pet Friendly 🐾", "WiFi Gratis 📶", "Terraza"].map(
             (badge) => (
               <span
                 key={badge}

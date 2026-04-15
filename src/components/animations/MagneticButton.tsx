@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 interface MagneticButtonProps {
@@ -17,11 +16,6 @@ export function MagneticButton({
 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
@@ -38,15 +32,17 @@ export function MagneticButton({
   };
 
   return (
-    <motion.div
+    <div
       ref={ref}
       className={className}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 200, damping: 15, mass: 0.5 }}
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        transition: "transform 0.2s ease-out",
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

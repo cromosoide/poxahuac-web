@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 interface TiltCardProps {
@@ -14,11 +13,6 @@ export function TiltCard({ children, className, maxTilt = 5 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
   const [glare, setGlare] = useState({ x: 50, y: 50 });
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
@@ -37,18 +31,14 @@ export function TiltCard({ children, className, maxTilt = 5 }: TiltCardProps) {
   };
 
   return (
-    <motion.div
+    <div
       ref={ref}
       className={className}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      animate={{
-        rotateX: tilt.rotateX,
-        rotateY: tilt.rotateY,
-      }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
       style={{
-        perspective: "1000px",
+        transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+        transition: "transform 0.15s ease-out",
         transformStyle: "preserve-3d",
       }}
     >
@@ -61,6 +51,6 @@ export function TiltCard({ children, className, maxTilt = 5 }: TiltCardProps) {
           }}
         />
       </div>
-    </motion.div>
+    </div>
   );
 }

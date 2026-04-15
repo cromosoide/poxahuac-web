@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { cn } from "@/lib/utils";
 import { faqs } from "@/data/faqs";
@@ -22,40 +21,41 @@ export function FAQ() {
         </FadeIn>
 
         <div className="space-y-3">
-          {faqs.map((faq, i) => (
-            <FadeIn key={i} delay={i * 0.05}>
-              <div className="bg-white rounded-xl overflow-hidden border border-pox-brown/10 shadow-sm">
-                <button
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex items-center justify-between p-5 text-left font-heading font-semibold text-pox-brown hover:text-pox-red transition-colors"
-                  aria-expanded={openIndex === i}
-                >
-                  {faq.question}
-                  <ChevronDown
-                    size={20}
-                    className={cn(
-                      "shrink-0 ml-2 transition-transform duration-300",
-                      openIndex === i && "rotate-180"
-                    )}
-                  />
-                </button>
-                <AnimatePresence>
-                  {openIndex === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <p className="px-5 pb-5 text-pox-brown/80 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </FadeIn>
-          ))}
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <FadeIn key={i} delay={i * 0.05}>
+                <div className="bg-white rounded-xl overflow-hidden border border-pox-brown/10 shadow-sm">
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between p-5 text-left font-heading font-semibold text-pox-brown hover:text-pox-red transition-colors"
+                    aria-expanded={isOpen}
+                  >
+                    {faq.question}
+                    <ChevronDown
+                      size={20}
+                      className={cn(
+                        "shrink-0 ml-2 transition-transform duration-300",
+                        isOpen && "rotate-180"
+                      )}
+                    />
+                  </button>
+                  <div
+                    style={{
+                      maxHeight: isOpen ? "500px" : "0",
+                      overflow: "hidden",
+                      transition: "max-height 0.3s ease, opacity 0.3s ease",
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                  >
+                    <p className="px-5 pb-5 text-pox-brown/80 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>
