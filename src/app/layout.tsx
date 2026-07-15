@@ -53,9 +53,10 @@ export const metadata: Metadata = {
     description: "El mejor pozole de Amecameca. Reserva tu mesa.",
     images: ["/images/og/og-home.jpg"],
   },
+  // Sitio desactivado temporalmente (ver src/proxy.ts): no indexar.
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
   alternates: {
     canonical: "https://poxahuac.com",
