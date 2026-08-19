@@ -18,12 +18,13 @@ const eventTypes = [
 const selectedTestimonials = [testimonials[2], testimonials[3]];
 
 function buildEventWhatsAppUrl(data: { nombre: string; tipo: string; personas: string; fecha: string }) {
+  // Emojis como escapes Unicode (ASCII puro) para evitar corrupción a U+FFFD.
   const lines = [
     `Hola, quiero cotizar un evento en Poxahuac:`,
-    `🎉 Tipo: ${data.tipo}`,
-    `👥 Personas: ${data.personas}`,
-    `📅 Fecha tentativa: ${data.fecha}`,
-    `👤 Nombre: ${data.nombre}`,
+    `\u{1F389} Tipo: ${data.tipo}`,
+    `\u{1F465} Personas: ${data.personas}`,
+    `\u{1F4C5} Fecha tentativa: ${data.fecha}`,
+    `\u{1F464} Nombre: ${data.nombre}`,
   ];
   return `https://wa.me/${BRAND.whatsappFull}?text=${encodeURIComponent(lines.join("\n"))}`;
 }

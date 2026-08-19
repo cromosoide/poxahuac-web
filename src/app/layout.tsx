@@ -57,6 +57,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "-a7fizyl3pulNEBn7kug2yQPeZWUmKYu7s1DeiqU19s",
+  },
   alternates: {
     canonical: "https://poxahuac.com",
   },
