@@ -7,6 +7,8 @@ import { MenuNav } from "@/components/menu/MenuNav";
 import { MenuSection } from "@/components/menu/MenuSection";
 import { Button } from "@/components/ui/Button";
 import { getMenuSchema } from "@/lib/schema";
+import { PageFAQ } from "@/components/sections/PageFAQ";
+import { menuFaqs } from "@/data/page-faqs";
 import type { MenuCategory } from "@/types";
 
 export default function MenuPage() {
@@ -24,10 +26,10 @@ export default function MenuPage() {
       <div className="bg-pox-dark-bg pt-6 pb-6 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-3 tracking-tight">
-            Menú de Poxahuac
+            Pozole Tradicional en Amecameca
           </h1>
           <p className="text-white/70 text-lg">
-            Pozoles, antojitos mexicanos y más. Ingredientes frescos de la región de Amecameca.
+            Rojo, blanco y vegetariano ($110–$130), antojitos mexicanos y más. Ingredientes frescos de la región.
           </p>
         </div>
       </div>
@@ -48,6 +50,8 @@ export default function MenuPage() {
           );
         })}
       </div>
+
+      <PageFAQ title="Preguntas frecuentes sobre nuestro menú" faqs={menuFaqs} />
 
       {/* Mobile sticky CTA */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-pox-dark-surface border-t border-pox-gold/20 p-3 z-40">

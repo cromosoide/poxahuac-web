@@ -184,8 +184,28 @@ export default async function BlogPostPage({
   );
 }
 
+function formatTables(markdown: string): string {
+  // Convierte tablas markdown (| a | b |) en <table> HTML con scroll horizontal.
+  return markdown.replace(
+    /((?:^\|.*\|\s*$\n?)+)/gm,
+    (block) => {
+      const rows = block.trim().split("\n").filter((r) => r.trim().startsWith("|"));
+      if (rows.length < 2 || !/^\|[\s:-]+\|/.test(rows[1].replace(/[^|\s:-]/g, ""))) return block;
+      const parseRow = (row: string) =>
+        row.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+      const header = parseRow(rows[0]);
+      const body = rows.slice(2).map(parseRow);
+      const th = header.map((c) => `<th>${c}</th>`).join("");
+      const trs = body
+        .map((cells) => `<tr>${cells.map((c) => `<td>${c}</td>`).join("")}</tr>`)
+        .join("");
+      return `<div class="table-wrap"><table><thead><tr>${th}</tr></thead><tbody>${trs}</tbody></table></div>\n`;
+    }
+  );
+}
+
 function formatContent(markdown: string): string {
-  return markdown
+  return formatTables(markdown)
     .replace(/^### (.*$)/gim, '<h3>$1</h3>')
     .replace(/^## (.*$)/gim, '<h2>$1</h2>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -194,6 +214,6 @@ function formatContent(markdown: string): string {
     .replace(new RegExp('(<li>.*<\\/li>)', 's'), '<ul>$1</ul>')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
     .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<[hulo])/gm, (match) => match ? `<p>${match}` : match)
+    .replace(/^(?!<[hulodt])/gm, (match) => match ? `<p>${match}` : match)
     .trim();
 }

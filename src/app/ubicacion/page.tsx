@@ -3,6 +3,8 @@ import Image from "next/image";
 import { MapPin, Car, Bus, ParkingMeter, Navigation } from "lucide-react";
 import { BRAND, GOOGLE_MAPS_URL, WAZE_URL } from "@/lib/constants";
 import { attractions } from "@/data/attractions";
+import { PageFAQ } from "@/components/sections/PageFAQ";
+import { ubicacionFaqs } from "@/data/page-faqs";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerChildren, StaggerItem } from "@/components/animations/StaggerChildren";
 import { Button } from "@/components/ui/Button";
@@ -10,7 +12,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Cómo Llegar a Poxahuac — Amecameca, Estado de México",
   description:
-    "Encuéntranos en Av. Fray Martín De Valencia 18, Amecameca. A 1h 15min de CDMX por autopista México-Cuautla. Estacionamiento disponible.",
+    "A 1h 15min de CDMX por la México-Cuautla o en autobús desde la TAPO ($40-60). Av. Fray Martín De Valencia 18, centro de Amecameca, con estacionamiento, camino al Paso de Cortés.",
   alternates: { canonical: "https://poxahuac.com/ubicacion" },
 };
 
@@ -159,6 +161,8 @@ export default function UbicacionPage() {
           </StaggerChildren>
         </div>
       </section>
+
+      <PageFAQ title="Preguntas frecuentes para llegar y moverte" faqs={ubicacionFaqs} />
     </>
   );
 }

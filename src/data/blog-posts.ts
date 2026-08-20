@@ -821,4 +821,135 @@ Amecameca te espera. ¡Buen viaje!
     keywords: ["como llegar a amecameca", "amecameca desde cdmx", "ruta amecameca", "autobus amecameca", "distancia cdmx amecameca"],
     author: "Poxahuac",
   },
+  {
+    slug: "pozole-rojo-vs-blanco-vs-verde",
+    title: "Pozole rojo vs blanco vs verde: ¿cuál elegir?",
+    excerpt: "Diferencias reales entre pozole rojo, blanco y verde: chiles, origen, picor y precios ($110-130 MXN). Guía honesta escrita desde una pozolería de Amecameca.",
+    content: `
+**Respuesta corta:** la diferencia está en el caldo. El pozole **blanco** es la base: maíz cacahuazintle y carne cocidos juntos, sin chile, con sabor limpio que cada quien ajusta en la mesa. El **rojo** parte de esa misma base y se tiñe con una salsa de chiles secos —guajillo y ancho— que aporta color y profundidad, casi sin picor. El **verde** se prepara con salsa de tomate verde y pepita, y es la versión emblemática de Guerrero. En Poxahuac (Amecameca) servimos rojo, blanco y vegetariano entre $110 y $130 MXN; el verde no está en nuestra carta, y aquí te explicamos honestamente por qué y cómo elegir el tuyo.
+
+## Tabla comparativa: los tres pozoles frente a frente
+
+| Tipo | Base del caldo | Ingrediente clave | Región asociada | ¿Pica? | Ideal para |
+|---|---|---|---|---|---|
+| **Blanco** | Caldo natural de la cocción de carne y maíz | Sin chile; se sazona en la mesa | Guerrero | No | Primerizos y niños |
+| **Rojo** | Caldo blanco + salsa de chiles secos | Guajillo y ancho | Jalisco | Casi nada | Quien busca sabor profundo y terroso |
+| **Verde** | Caldo con salsa verde | Tomate verde y pepita | Guerrero | Ligero a medio | Quien quiere frescura y acidez |
+| **Vegetariano** | Misma base de maíz | Hongos, calabaza y chayote | Versión contemporánea | Según la base elegida | Quien no come carne |
+
+## ¿Qué es el pozole blanco?
+
+Es el pozole en su forma más pura: el caldo que resulta de cocer la carne con el maíz cacahuazintle, ese grano grande y harinoso que al nixtamalizarse "florea" —se abre como flor— y suelta la espuma que da nombre al platillo (*pozolli* significa "espumoso" en náhuatl). Al no llevar chile, el blanco deja que el grano y el caldo hablen solos, y cada comensal lo ajusta con orégano, limón, cebolla y chile piquín. Es la puerta de entrada perfecta al pozole.
+
+## ¿Qué es el pozole rojo y pica mucho?
+
+El rojo toma el caldo blanco y lo enriquece con una salsa de chiles secos, principalmente **guajillo y ancho**. Aquí va el dato que sorprende a muchos: esos chiles aportan color y un sabor terroso-ahumado, **no picor**. Un pozole rojo bien hecho es amigable hasta para niños; el picante real lo agregas tú en la mesa. Si en algún lugar te ha picado el rojo, probablemente llevaba chile de árbol o piquín ya integrado, que no es lo tradicional.
+
+## ¿Y el pozole verde? (Sí, aunque no lo vendamos)
+
+El verde es la joya de Guerrero: se prepara con una salsa de tomate verde y pepita de calabaza que le da un perfil fresco, ligeramente ácido y herbal. Es delicioso y merece su fama.
+
+En Poxahuac decidimos no incluirlo en la carta: preferimos hacer muy bien tres pozoles —rojo, blanco y vegetariano— con maíz cacahuazintle de la región de los volcanes, que aquí se cultiva a más de 2,400 metros, antes que hacer cinco a medias. Si tu antojo es específicamente verde, tu destino es una cocina guerrerense; si quieres entender el pozole desde su base, el blanco y el rojo son el mejor punto de partida.
+
+## ¿Existe el pozole vegetariano y sabe igual?
+
+Existe, y cada vez se pide más. Se sustituye la carne por **hongos, calabaza y chayote** guisados, sobre la misma base de maíz. ¿Sabe igual que el de carne? No igual, pero muy cerca: los hongos absorben el caldo igual de bien, con un resultado más ligero. En Poxahuac es plato fijo del menú, a $110 MXN y con la misma guarnición completa.
+
+## ¿Qué carne lleva el pozole tradicional?
+
+Tradicionalmente cerdo: maciza, espinazo o cabeza, cocidos en el mismo caldo que el maíz. También hay versiones de pollo, más ligeras. En nuestra cocina tú eliges: pollo ($120 MXN) o cerdo ($130 MXN), en rojo o blanco, y la opción sin carne es la de hongos.
+
+## ¿Cuál pedir si es tu primera vez?
+
+La recomendación de la casa: **empieza con el blanco y pide la salsa aparte**. Así pruebas el sabor real del maíz y el caldo, y vas subiendo de intensidad a tu ritmo. Si ya conoces el pozole y quieres profundidad, ve directo al rojo. Si no comes carne, el vegetariano no es un premio de consolación: es un pozole completo.
+
+## Preguntas frecuentes
+
+### ¿Cuál de los tres pica más?
+
+El verde suele ser el de más carácter por la salsa fresca; el rojo, contra lo que se cree, casi no pica (guajillo y ancho son chiles de sabor, no de fuego); el blanco no pica nada. En todos los casos, el nivel final lo decides tú con la guarnición.
+
+### ¿Con qué se acompaña cualquier pozole?
+
+Los clásicos: lechuga o col rebanada, rábano, cebolla picada, orégano, limón, chile piquín y tostadas con crema. En Poxahuac la guarnición completa va incluida en el precio.
+
+### ¿El pozole solo se come en septiembre?
+
+Septiembre concentra las búsquedas por las fiestas patrias —el pozole fue platillo ritual prehispánico y terminó convertido en EL plato de la noche del Grito—, pero en pueblos de montaña como Amecameca, al pie del Popocatépetl y el Iztaccíhuatl, un pozole caliente es plan de cualquier fin de semana del año.
+
+## Ven a compararlos en vivo
+
+La mejor forma de decidir entre rojo y blanco es probarlos uno junto al otro. En **Poxahuac**, en el centro de Amecameca (a ~1 h 15 de CDMX por la México-Cuautla), servimos pozole rojo, blanco y vegetariano de $110 a $130 MXN con guarnición y tostadas incluidas, de martes a domingo desde las 10:30. Tenemos terraza pet-friendly, WiFi y estacionamiento propio. Si vienes en fin de semana o en septiembre, resérvanos por WhatsApp: es gratis y toma dos minutos.
+    `,
+    date: "2026-08-20",
+    image: "/images/pozole-rojo.jpg",
+    keywords: ["pozole rojo vs blanco", "diferencia entre pozole rojo y verde", "tipos de pozole", "pozole vegetariano", "pozole en Amecameca"],
+    author: "Poxahuac",
+  },
+  {
+    slug: "amecameca-vs-tepoztlan-escapada-cdmx",
+    title: "Amecameca vs Tepoztlán: ¿a cuál escapar desde CDMX?",
+    excerpt: "Comparativa con datos duros: distancia, tiempo real, costo del día, multitudes y qué comer, para elegir entre Amecameca y Tepoztlán en una escapada desde CDMX.",
+    content: `
+**Respuesta corta:** si buscas llegar rápido, ver volcanes de cerca, comer a precios de pueblo y evitar multitudes, elige **Amecameca**: son ~85 km y alrededor de 1 hora 15 minutos por la autopista México-Cuautla. Si tu plan es subir al Tepozteco y te gusta el ambiente turístico con todo lo que implica, elige **Tepoztlán**, aunque el trayecto real ronda 1 hora 45 y el pueblo se satura los fines de semana. Aviso honesto: esta guía la escribimos desde una pozolería de Amecameca ([Poxahuac](/menu)), pero todos los datos son verificables y te decimos también cuándo conviene Tepoztlán.
+
+## Tabla comparativa
+
+| Criterio | Amecameca | Tepoztlán |
+|---|---|---|
+| Distancia desde CDMX | ~85 km por la México-Cuautla | ~80 km, con más tráfico de salida |
+| Tiempo real en auto | ~1 h 15 min | ~1 h 45 min en fin de semana |
+| Sin auto | Autobuses Volcanes desde la TAPO cada 20 min, ~1 h 10, $40-60 MXN | Autobús con boleto desde ~$130 MXN |
+| Saturación en fin de semana | Baja a media | Alta |
+| Atractivo ancla | Popocatépetl e Iztaccíhuatl, Sacromonte, Paso de Cortés | Pirámide del Tepozteco |
+| Plan gratuito | Sacromonte, plaza, mercado Juárez | Caminar el centro (el resto, con fila) |
+| Comida típica | Pozole, tlacoyos de haba en maíz azul, quesadillas de hongos | Itacates y cocina de mercado |
+| Plato fuerte en el centro | $110-130 MXN (Poxahuac) | Ticket turístico más alto |
+
+## Distancia y tiempo real desde CDMX
+
+En el papel los dos pueblos están casi a la misma distancia. En la práctica no: la **México-Cuautla** hacia Amecameca fluye mejor, y el viaje se resuelve en ~1 h 15. Hacia Tepoztlán, el embudo de la salida a Cuernavaca y la llegada al pueblo estiran el trayecto a ~1 h 45 en fin de semana.
+
+Sin auto, la diferencia es todavía más clara: a Amecameca salen los **autobuses Volcanes desde la TAPO cada 20 minutos**, el viaje dura ~1 h 10 y el boleto ronda los **$40-60 MXN**; la terminal queda a minutos a pie del centro. A Tepoztlán el boleto parte de ~$130 MXN. Ida y vuelta, la escapada a Amecameca en transporte público cuesta menos que un solo boleto sencillo a Tepoztlán.
+
+## ¿Cuánto cuesta el día completo?
+
+En **Amecameca**, el plan central puede ser prácticamente gratuito: subir al Santuario del Sacromonte (20-30 minutos a pie desde la plaza, entrada libre, el mejor mirador hacia el Popo y el Izta), recorrer el mercado Juárez y el centro. Los extras son accesibles: la entrada al parque nacional Izta-Popo por el Paso de Cortés cuesta $25 MXN por persona, y Hacienda Panoaya (laberinto, aviario, museos de Sor Juana y de los Volcanes) maneja paquetes de $275-325 MXN. Un plato fuerte en el centro cuesta $110-130 MXN.
+
+En **Tepoztlán**, el encanto es real pero el ticket promedio del día —comida, antojos, estacionamiento— sube notablemente, como en todo destino saturado.
+
+## Multitudes: el factor que nadie pone en la balanza
+
+Tepoztlán es víctima de su éxito: los sábados y domingos el pueblo se llena, con filas para subir al Tepozteco y calles a reventar. Amecameca sigue siendo un **Pueblo con Encanto** de ritmo local: su día más animado es el domingo de tianguis, y aun así se camina a gusto. Si tu idea de escapada es descomprimirte, ese dato pesa más que cualquier otro.
+
+## Qué hacer en cada uno
+
+### En Amecameca
+
+- **Sacromonte**: santuario del siglo XVI en lo alto del cerro, subida de 20-30 minutos y vista franca a los volcanes.
+- **Paso de Cortés**: a 23 km del centro (~40 min en auto), la puerta al parque Izta-Popo ($25 MXN, 7:00-21:00). Conviene subir temprano.
+- **Hacienda Panoaya**: plan familiar con laberinto, zoológico y museos (10:00-17:00).
+- **Temporadas**: luciérnagas en el Bosque Esmeralda de junio a principios de agosto, Feria de la Nuez a mediados de agosto, volcanes nevados en invierno.
+
+### En Tepoztlán
+
+- **El Tepozteco**: la caminata a la pirámide es el plan ancla y vale la pena, con condición física y paciencia para la fila.
+- **Mercado y ambiente**: el centro es vistoso, con artesanía y cocina de mercado; los itacates son el antojo local.
+
+## Qué se come en cada pueblo
+
+Tepoztlán tiene buena cocina de mercado. Amecameca es tierra de maíz y montaña: **tlacoyos de haba y frijol en maíz azul, quesadillas de hongos de temporada, barbacoa, dulces y licores de nuez** y, como plato ancla de todo el año, el **pozole**. En [Poxahuac](/menu), en pleno centro, esa cocina regional está en una sola mesa: pozole rojo, blanco y vegetariano de $110 a $130 MXN con guarnición incluida, más quesadillas, tlacoyos y sopes.
+
+## Veredicto honesto
+
+- **Elige Tepoztlán** si tu escapada gira en torno a subir al Tepozteco y disfrutas el bullicio turístico.
+- **Elige Amecameca** si quieres el trayecto más corto y barato desde CDMX, volcanes de postal, planes gratuitos o económicos y comer bien sin fila ni precios inflados.
+
+Y si eliges Amecameca, ya sabes dónde cae bien un pozole caliente: **Poxahuac** abre de martes a domingo desde las 10:30 (viernes y sábado hasta las 21:00), con terraza pet-friendly, WiFi y estacionamiento. Cerramos a las 20:30 (viernes y sábado a las 21:00). Reserva gratis por WhatsApp, sobre todo en puentes y en septiembre.
+    `,
+    date: "2026-08-20",
+    image: "/images/interior-restaurante.jpg",
+    keywords: ["amecameca o tepoztlan", "pueblos cerca de cdmx para visitar", "escapada de un dia desde cdmx", "que hacer en amecameca", "pueblos magicos estado de mexico"],
+    author: "Poxahuac",
+  },
 ];
