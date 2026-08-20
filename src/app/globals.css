@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme inline {
   --color-pox-red: #DB1622;
@@ -202,4 +203,35 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Tablas en artículos del blog (comparativas) */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(99, 18, 31, 0.15);
+}
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+  background: #fff;
+}
+.table-wrap th {
+  background: #63121F;
+  color: #F7DECA;
+  font-family: var(--font-heading);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+.table-wrap td {
+  padding: 0.7rem 1rem;
+  border-top: 1px solid rgba(99, 18, 31, 0.12);
+  color: #3A0B14;
+  vertical-align: top;
+}
+.table-wrap tr:nth-child(even) td {
+  background: rgba(247, 222, 202, 0.35);
 }

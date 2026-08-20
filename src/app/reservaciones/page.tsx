@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Clock, Shield, Phone } from "lucide-react";
 import { ReservationForm } from "@/components/forms/ReservationForm";
+import { PageFAQ } from "@/components/sections/PageFAQ";
+import { reservacionesFaqs } from "@/data/page-faqs";
 import { BRAND } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -106,6 +108,8 @@ export default function ReservacionesPage() {
           </div>
         </div>
       </div>
+
+      <PageFAQ title="Preguntas frecuentes sobre reservaciones" faqs={reservacionesFaqs} />
     </div>
   );
 }
