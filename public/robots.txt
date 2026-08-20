@@ -1,4 +1,25 @@
+# Poxahuac — robots.txt
+# Buscadores tradicionales y bots de IA bienvenidos: si no pueden rastrear,
+# no pueden citarte. (Método PRISMA — capa R / Reconocimiento AIO)
+
 User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /herramientas/insumos
+
+# Bots de IA permitidos explícitamente (ChatGPT, Claude, Perplexity, Gemini, etc.)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Bingbot
 Allow: /
 Disallow: /api/
 Disallow: /herramientas/insumos
