@@ -6,6 +6,7 @@ import { menuItems, menuCategories } from "@/data/menu";
 import { MenuNav } from "@/components/menu/MenuNav";
 import { MenuSection } from "@/components/menu/MenuSection";
 import { Button } from "@/components/ui/Button";
+import { getMenuSchema } from "@/lib/schema";
 import type { MenuCategory } from "@/types";
 
 export default function MenuPage() {
@@ -13,6 +14,12 @@ export default function MenuPage() {
 
   return (
     <>
+      {/* Schema Menu (AEO: consultas de menú y precios en buscadores e IAs) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getMenuSchema()) }}
+      />
+
       {/* Hero */}
       <div className="bg-pox-dark-bg pt-6 pb-6 text-center text-white">
         <div className="max-w-4xl mx-auto px-4">
