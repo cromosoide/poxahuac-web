@@ -101,7 +101,7 @@ export function getBlogPostSchema(post: {
       name: "Poxahuac",
       logo: {
         "@type": "ImageObject",
-        url: "https://poxahuac.com/images/logo/poxahuac-logo.svg",
+        url: "https://poxahuac.com/images/logo/poxahuac_logo_vino.png",
       },
     },
     image: post.image,

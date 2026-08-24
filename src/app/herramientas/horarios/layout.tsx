@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: { canonical: "https://poxahuac.com/herramientas/horarios" },
 };
 
 export default function HorariosLayout({
