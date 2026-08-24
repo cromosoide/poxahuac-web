@@ -2,15 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { BRAND, NAV_LINKS } from "@/lib/constants";
+import { SocialIcon } from "@/components/ui/SocialIcons";
 
 const socialLinks = [
-  { label: "Facebook", href: BRAND.social.facebook, icon: "fb" },
-  { label: "Instagram", href: BRAND.social.instagram, icon: "ig" },
-  { label: "TripAdvisor", href: BRAND.social.tripadvisor, icon: "ta" },
+  { label: "Facebook", href: BRAND.social.facebook, icon: "fb" as const },
+  { label: "Instagram", href: BRAND.social.instagram, icon: "ig" as const },
+  { label: "TripAdvisor", href: BRAND.social.tripadvisor, icon: "ta" as const },
   {
     label: "WhatsApp",
     href: `https://wa.me/${BRAND.whatsappFull}`,
-    icon: "wa",
+    icon: "wa" as const,
   },
 ];
 
@@ -34,18 +35,21 @@ export function Footer() {
               {BRAND.tagline}. Restaurante de pozole tradicional mexicano en Amecameca, Estado de México.
             </p>
             <div className="flex gap-3">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.icon}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:bg-pox-gold hover:text-white hover:rotate-[10deg] transition-all duration-200 text-sm font-bold"
-                >
-                  {s.icon.toUpperCase()}
-                </a>
-              ))}
+              {socialLinks.map((s) => {
+                const Icon = SocialIcon[s.icon];
+                return (
+                  <a
+                    key={s.icon}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:bg-pox-gold hover:text-white hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
